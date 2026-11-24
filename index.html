@@ -1,0 +1,1800 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CrabBots attendance console with on-device face matching and local backups.">
+  <meta name="theme-color" content="#101521">
+  <title>CrabBots Attendance Tracker</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+  <style id="tailwind-css">*,::backdrop,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:initial}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:initial;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:initial}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.visible{visibility:visible}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.isolate{isolation:isolate}.col-span-2{grid-column:span 2/span 2}.mb-1{margin-bottom:.25rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mt-1{margin-top:.25rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.block{display:block}.flex{display:flex}.table{display:table}.grid{display:grid}.hidden{display:none}.max-h-56{max-height:14rem}.min-h-screen{min-height:100vh}.w-full{width:100%}.min-w-0{min-width:0}.shrink-0{flex-shrink:0}.cursor-pointer{cursor:pointer}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-cols-\[minmax\(0\2c 1fr\)_auto\]{grid-template-columns:minmax(0,1fr) auto}.grid-cols-\[minmax\(0\2c 1fr\)_minmax\(0\2c 1fr\)\]{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-5{gap:1.25rem}.gap-x-3{-moz-column-gap:.75rem;column-gap:.75rem}.gap-x-4{-moz-column-gap:1rem;column-gap:1rem}.gap-x-5{-moz-column-gap:1.25rem;column-gap:1.25rem}.gap-y-1{row-gap:.25rem}.gap-y-2{row-gap:.5rem}.overflow-auto{overflow:auto}.break-words{overflow-wrap:break-word}.rounded{border-radius:.25rem}.rounded-md{border-radius:.375rem}.border{border-width:1px}.p-4{padding:1rem}.px-3{padding-left:.75rem;padding-right:.75rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.pb-8{padding-bottom:2rem}.pt-3{padding-top:.75rem}.pt-5{padding-top:1.25rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.outline{outline-style:solid}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width:640px){.sm\:col-span-1{grid-column:span 1/span 1}.sm\:inline{display:inline}.sm\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.sm\:grid-cols-\[minmax\(0\2c 1fr\)_auto_auto\]{grid-template-columns:minmax(0,1fr) auto auto}.sm\:grid-cols-\[minmax\(0\2c 1fr\)_minmax\(0\2c 1\.15fr\)_auto\]{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr) auto}.sm\:items-end{align-items:flex-end}.sm\:p-5{padding:1.25rem}.sm\:py-4{padding-top:1rem;padding-bottom:1rem}.sm\:pt-7{padding-top:1.75rem}.sm\:text-\[1\.75rem\]{font-size:1.75rem}}</style>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #101521;
+      --panel: #171e2c;
+      --input: #111827;
+      --line: #2c374a;
+      --text: #f2f5fb;
+      --muted: #a7b4ca;
+      --accent: #99baff;
+      --primary: #315dcc;
+      --primary-hover: #3c66d4;
+      --good: #8ce6bd;
+      --warn: #f5cc8b;
+      --danger: #ffb1b9;
+      --font-body: 'General Sans', system-ui, sans-serif;
+    }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); }
+    h1, h2 { letter-spacing: -.025em; }
+    [hidden] { display: none !important; }
+    .shell { width: min(100% - 2rem, 75rem); margin-inline: auto; }
+    .topbar { background: #141b28; border-bottom: 1px solid var(--line); }
+    .monogram { width: 2.5rem; height: 2.5rem; background: #22365b; border: 1px solid #385281; color: #d3e2ff; }
+    .muted { color: var(--muted); }
+    .eyebrow { color: var(--muted); font-size: .75rem; font-weight: 600; letter-spacing: .105em; text-transform: uppercase; }
+    .panel { min-width: 0; border: 1px solid var(--line); border-radius: .75rem; background: var(--panel); }
+    .workspace { display: grid; grid-template-columns: minmax(0, 1.53fr) minmax(0, 1fr); gap: 1.25rem; align-items: start; }
+    .summary { overflow: hidden; }
+    .metric { min-width: 0; padding: .75rem 1rem; border-left: 1px solid var(--line); }
+    .metric:first-child { border-left: 0; background: #1b2840; }
+    .metric-value { margin-top: .125rem; font-size: 1.375rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+    .metric:first-child .metric-value { color: #c4d7ff; }
+    .badge { display: inline-flex; align-items: center; gap: .45rem; border: 1px solid var(--line); border-radius: .375rem; color: var(--muted); background: var(--input); padding: .28rem .55rem; font-size: .75rem; font-weight: 600; white-space: nowrap; }
+    .badge[role="status"]::before { content: ''; width: .42rem; height: .42rem; border-radius: 50%; background: currentColor; }
+    .badge[data-tone="good"] { color: var(--good); }
+    .badge[data-tone="warn"] { color: var(--warn); }
+    .badge[data-tone="error"] { color: var(--danger); }
+    .btn, .field { min-height: 2.75rem; border: 1px solid #3b4a63; border-radius: .375rem; font-size: .875rem; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: .45rem; padding: .5rem .75rem; font-weight: 600; background: #202a3d; }
+    .btn:not(:disabled):hover { background: #2a3951; }
+    .btn-primary { color: #fff; background: var(--primary); border-color: #557be0; }
+    .btn-primary:not(:disabled):hover { background: var(--primary-hover); }
+    .btn-quiet { color: var(--muted); background: transparent; border-color: transparent; }
+    .btn-danger { color: var(--danger); }
+    button:disabled, select:disabled { opacity: .6; cursor: not-allowed; }
+    .field { display: block; background: var(--input); padding: .48rem .625rem; width: 100%; min-width: 0; font-weight: 400; }
+    .field::placeholder { color: var(--muted); opacity: 1; }
+    input[type=file] { padding-block: .38rem; }
+    input[type=file]::file-selector-button { margin-right: .5rem; border: 0; border-radius: .25rem; background: #2a3951; color: var(--text); padding: .23rem .5rem; cursor: pointer; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .stage { position: relative; display: grid; place-items: center; width: 100%; min-height: 12rem; aspect-ratio: 2.13; overflow: hidden; border-radius: .5rem; border: 1px solid #29364d; background: #0c111b; isolation: isolate; }
+    .stage video, .stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+    .stage canvas { pointer-events: none; }
+    .stage-mode { position: absolute; top: .625rem; right: .625rem; z-index: 1; pointer-events: none; }
+    .scan-feedback { position: absolute; bottom: .625rem; left: .625rem; right: .625rem; width: fit-content; max-width: calc(100% - 1.25rem); z-index: 1; padding: .3rem .55rem; border: 1px solid #4b5a70; border-radius: .375rem; background: #101521f2; color: var(--text); font-size: .75rem; font-weight: 600; overflow-wrap: anywhere; pointer-events: none; }
+    .scan-feedback[data-tone="good"] { color: var(--good); border-color: #50826f; }
+    .scan-feedback[data-tone="warn"] { color: var(--warn); border-color: #796140; }
+    .demo-summary { display: list-item; cursor: pointer; padding-block: .625rem; }
+    .demo-summary::marker { color: var(--accent); }
+    .demo-steps { display: grid; gap: .375rem; padding: 0 0 .5rem 1.25rem; list-style: decimal; }
+    .checklist { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; }
+    .checklist li { border: 1px solid var(--line); border-radius: .375rem; background: var(--input); padding: .625rem .75rem; }
+    .checklist li[data-state="active"] { border-color: #6884c0; }
+    .checklist li[data-state="pass"] .step-status, .present { color: var(--good); }
+    .checklist li[data-state="active"] .step-status { color: var(--accent); }
+    .demo-panel { border-color: #445c89; }
+    .demo-panel-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: .5rem; }
+    .demo-welcome { border-color: #506eaa; border-top: 3px solid var(--accent); box-shadow: 0 1.5rem 5rem #060910a6; overscroll-behavior: contain; }
+    .demo-welcome-title { margin-top: .375rem; font-size: clamp(1.375rem, 4vw, 1.75rem); font-weight: 600; }
+    .demo-welcome .eyebrow, .welcome-steps span { color: var(--accent); }
+    .welcome-steps { display: grid; gap: .375rem; margin-block: 1rem; padding: .75rem; border: 1px solid var(--line); border-radius: .5rem; background: var(--input); }
+    .welcome-steps li { display: flex; align-items: baseline; gap: .75rem; }
+    .demo-participant { overflow-wrap: anywhere; }
+    .demo-enrollment { max-width: 36rem; }
+    .demo-photo-controls { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .5rem; align-items: center; }
+    .dialog-wide { width: min(42rem, calc(100% - 2rem)); }
+    .error-guide { display: grid; gap: .5rem; }
+    .error-guide > div { border-top: 1px solid var(--line); padding-top: .5rem; }
+    .error-guide code { color: var(--accent); }
+    .queue-list { max-height: 14rem; overflow: auto; overscroll-behavior: contain; }
+    .muted [data-tone="error"], #log-message[data-tone="error"] { color: var(--danger); }
+    .offline-grid { position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(#24314855 1px, transparent 1px), linear-gradient(90deg, #24314855 1px, transparent 1px); background-size: 24px 24px; mask-image: radial-gradient(ellipse at center, #000, transparent 87%); }
+    .range { accent-color: var(--accent); min-height: 1.875rem; }
+    .table-frame { border: 1px solid var(--line); border-radius: .5rem; overflow: auto; max-height: 17.5rem; overscroll-behavior: contain; }
+    table { text-align: left; }
+    thead { position: sticky; top: 0; background: #202a3c; color: #c2cee1; }
+    th, td { padding: .625rem .75rem; }
+    td { border-top: 1px solid var(--line); }
+    td:first-child { overflow-wrap: anywhere; }
+    .numeric { font-variant-numeric: tabular-nums; }
+    .section-rule { border-top: 1px solid var(--line); }
+    .notice { border: 1px solid var(--line); border-radius: .375rem; padding: .625rem .75rem; }
+    .notice[data-tone="error"] { color: var(--danger); border-color: #764650; background: #35232e; }
+    .notice[data-tone="warn"] { color: var(--warn); border-color: #685434; background: #30291f; }
+    .notice[data-tone="good"] { color: var(--good); border-color: #336252; background: #1c322d; }
+    .dialog { width: min(28rem, calc(100% - 2rem)); max-height: calc(100% - 2rem); padding: 1.25rem; color: var(--text); }
+    .dialog::backdrop { background: #060910c9; }
+    .dialog.demo-welcome { width: min(35rem, calc(100% - 2rem)); padding: clamp(1.25rem, 5vw, 2rem); }
+    body:has(.demo-welcome[open]) { overflow: hidden; }
+    .skip:not(:focus) { position: absolute; left: -10000px; }
+    .skip:focus { position: fixed; top: .5rem; left: .5rem; z-index: 40; }
+    @media (max-width: 850px) { .workspace { grid-template-columns: minmax(0, 1fr); } }
+    @media (max-width: 639px) {
+      .metric:nth-child(odd) { border-left: 0; }
+      .metric:nth-child(n+3) { border-top: 1px solid var(--line); }
+      .checklist { grid-template-columns: 1fr; }
+      .checklist li { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; }
+      .demo-photo-controls { grid-template-columns: minmax(0, 1fr); justify-items: start; }
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <a href="#main" class="skip btn btn-primary">Skip to attendance console</a>
+  <header class="topbar">
+    <div class="shell flex flex-wrap items-center justify-between gap-x-5 gap-y-2 py-3 sm:py-4">
+      <div class="flex min-w-0 items-center gap-3">
+        <span class="monogram flex shrink-0 items-center justify-center rounded-md text-sm font-bold" aria-hidden="true">CB</span>
+        <div>
+          <p class="text-sm font-semibold">CrabBots</p>
+          <p class="muted text-xs">Attendance Tracker</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+        <span id="clock" class="muted numeric hidden text-xs sm:inline" aria-hidden="true"></span>
+        <span id="model-status" class="badge" data-tone="warn" role="status">Loading models</span>
+        <button id="retry-models" class="btn btn-quiet" type="button" hidden>Retry models</button>
+        <button id="open-help" class="btn" type="button">Troubleshooting</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1" class="shell pb-8 pt-5 sm:pt-7">
+    <div class="mb-4 flex flex-wrap items-end justify-between gap-3">
+      <div>
+        <h1 class="text-2xl font-semibold sm:text-[1.75rem]">Attendance console</h1>
+        <p id="session-caption" class="muted mt-1 text-sm">Current session</p>
+      </div>
+      <div id="session-actions" class="flex flex-wrap gap-2">
+        <button id="new-session" type="button" class="btn">New session</button>
+        <button id="start-demo" type="button" class="btn">Guided demo</button>
+      </div>
+    </div>
+    <p id="model-warning" class="notice mb-4 text-sm" role="status" hidden></p>
+    <p id="storage-warning" class="notice mb-4 text-sm" data-tone="warn" role="status" hidden></p>
+    <section id="demo-panel" class="panel demo-panel mb-5 p-4 sm:p-5" aria-labelledby="demo-heading" hidden>
+      <div class="demo-panel-head mb-3">
+        <div><h2 id="demo-heading" class="text-lg font-semibold" tabindex="-1">Guided demo</h2>
+          <p class="muted mt-1 text-sm">Practice without recording weekly attendance.</p></div>
+        <button id="exit-demo" class="btn" type="button">Pause demo</button>
+      </div>
+      <ol class="checklist mb-3">
+        <li id="step-enroll"><p class="text-sm font-semibold">1. Photo enrollment</p><p id="status-enroll" class="step-status muted text-xs">Pending</p></li>
+        <li id="step-still"><p class="text-sm font-semibold">2. Standing check-in</p><p id="status-still" class="step-status muted text-xs">Pending</p></li>
+        <li id="step-walk"><p class="text-sm font-semibold">3. Walk-by check-in</p><p id="status-walk" class="step-status muted text-xs">Pending</p></li>
+      </ol>
+      <p id="demo-participant" class="demo-participant muted mb-3 text-sm" hidden></p>
+      <p id="demo-message" class="notice mb-3 text-sm" role="status" hidden></p>
+      <p id="demo-feedback" class="notice mb-3 text-sm" role="status" hidden></p>
+      <div id="demo-enrollment" class="demo-enrollment mb-3" hidden>
+        <div id="demo-roster-choice" class="mb-3" hidden>
+          <label for="demo-roster-member" class="mb-1 block text-xs font-semibold">Use a photo already on the roster</label>
+          <div class="demo-photo-controls">
+            <select id="demo-roster-member" class="field" required></select>
+            <button id="demo-use-member" class="btn" type="button" disabled>Use enrolled photo</button>
+          </div>
+        </div>
+        <form id="demo-enroll-form" novalidate>
+          <label for="demo-enroll-file" class="mb-1 block text-xs font-semibold">Upload a temporary demo photo</label>
+          <div class="demo-photo-controls">
+            <input id="demo-enroll-file" class="field" type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="demo-enroll-hint" required>
+            <button id="demo-enroll-member" type="submit" class="btn btn-primary" disabled>Enroll demo photo</button>
+          </div>
+          <p id="demo-enroll-hint" class="muted mt-2 text-xs">Use a clear photo of one consenting participant. The photo is not saved or added to the roster.</p>
+          <p id="demo-model-note" class="muted mt-2 text-xs" role="status" hidden></p>
+          <p id="demo-enroll-message" class="notice mt-3 text-sm" role="status" hidden></p>
+        </form>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <button id="demo-action" class="btn btn-primary" type="button" hidden>Start camera for demo</button>
+        <button id="demo-export" class="btn" type="button" hidden>Download demo results</button>
+        <button id="demo-restart" class="btn btn-quiet" type="button" hidden>Restart demo</button>
+      </div>
+    </section>
+    <section class="panel summary mb-5" aria-label="Session summary">
+      <dl class="grid grid-cols-2 sm:grid-cols-4">
+        <div class="metric"><dt class="eyebrow">Unique attendees</dt><dd id="stat-unique" class="metric-value" aria-live="polite">0</dd></div>
+        <div class="metric"><dt class="eyebrow">Session check-ins</dt><dd id="stat-checkins" class="metric-value">0</dd></div>
+        <div class="metric"><dt class="eyebrow">Enrolled members</dt><dd id="stat-enrolled" class="metric-value">0</dd></div>
+        <div class="metric"><dt class="eyebrow">Last check-in</dt><dd id="stat-last" class="metric-value">Not yet</dd></div>
+      </dl>
+    </section>
+
+    <div class="workspace">
+      <div class="grid min-w-0 gap-5">
+        <section class="panel p-4 sm:p-5" aria-labelledby="camera-heading">
+          <div class="mb-4 flex flex-wrap items-center justify-between gap-2">
+            <h2 id="camera-heading" class="text-lg font-semibold">Live camera</h2>
+            <span id="cam-status" class="badge" role="status">Offline</span>
+          </div>
+          <div class="stage">
+            <video id="webcam" autoplay muted playsinline aria-label="Live camera feed" hidden></video>
+            <canvas id="overlay" aria-hidden="true" hidden></canvas>
+            <span id="stage-mode" class="stage-mode badge" data-tone="warn" hidden>Demo · Not recording attendance</span>
+            <p id="scan-feedback" class="scan-feedback" hidden></p>
+            <div id="cam-placeholder" class="flex flex-col items-center gap-1 p-4 text-center">
+              <div class="offline-grid" aria-hidden="true"></div>
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#a5bde8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 16v-5a5 5 0 0 1 5-5h5m16 0h5a5 5 0 0 1 5 5v5m0 16v5a5 5 0 0 1-5 5h-5m-16 0h-5a5 5 0 0 1-5-5v-5"/>
+                <rect x="15" y="19" width="13" height="10" rx="2"/><path d="m28 22 5-3v10l-5-3"/>
+              </svg>
+              <p class="mt-2 text-sm font-semibold">Camera preview</p>
+              <p class="muted text-xs">Video appears after you start the camera.</p>
+            </div>
+          </div>
+          <div class="mt-4">
+            <label for="camera-select" class="mb-1 block text-xs font-semibold">Video input</label>
+            <div class="grid grid-cols-[minmax(0,1fr)_auto] gap-2 sm:grid-cols-[minmax(0,1fr)_auto_auto]">
+              <select id="camera-select" class="field" aria-describedby="camera-hint"><option value="">System default camera</option></select>
+              <button id="refresh-devices" class="btn" type="button">Refresh</button>
+              <button id="btn-toggle-cam" class="btn btn-primary col-span-2 sm:col-span-1" type="button" disabled>Start Camera</button>
+            </div>
+            <p id="camera-hint" class="muted mt-2 text-xs" role="status">Allow camera access to see device names.</p>
+            <p id="camera-message" class="notice mt-3 text-sm" role="status" hidden></p>
+          </div>
+          <div class="section-rule mt-4 pt-3">
+            <div class="flex flex-wrap items-center justify-between gap-x-3">
+              <div class="flex items-center gap-2">
+                <label for="threshold-slider" class="text-sm font-semibold">Match threshold</label>
+                <output id="threshold-value" for="threshold-slider" class="badge numeric">0.55</output>
+              </div>
+              <button id="reset-threshold" class="btn btn-quiet" type="button">Reset threshold</button>
+            </div>
+            <input id="threshold-slider" class="range block w-full cursor-pointer" type="range" min="0.30" max="0.90" step="0.01" value="0.55" aria-describedby="threshold-hint">
+            <div class="muted flex justify-between gap-2 text-xs"><span>Stricter</span><span>More lenient</span></div>
+            <p id="threshold-hint" class="muted mt-2 text-xs">Maximum face distance, not a confidence percentage. Lower values require a closer match.</p>
+          </div>
+        </section>
+
+        <section id="weekly-enrollment" class="panel p-4 sm:p-5" aria-labelledby="enroll-heading">
+          <h2 id="enroll-heading" class="text-lg font-semibold">Photo enrollment</h2>
+          <p id="enroll-hint" class="muted mt-1 text-sm">Use a clear photo of one consenting member. Photos aren’t saved.</p>
+          <form id="enroll-form" novalidate class="mt-4 grid min-w-0 gap-3 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)_auto] sm:items-end">
+            <div class="min-w-0">
+              <label for="enroll-name" class="mb-1 block text-xs font-semibold">Member name</label>
+              <input id="enroll-name" class="field" maxlength="60" required autocomplete="off" placeholder="Full name">
+            </div>
+            <div class="min-w-0">
+              <label for="enroll-file" class="mb-1 block text-xs font-semibold">Member photo</label>
+              <input id="enroll-file" class="field" type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="enroll-hint" required>
+            </div>
+            <button id="enroll-member" type="submit" class="btn" disabled>Enroll member</button>
+          </form>
+          <button id="add-manual" class="btn btn-quiet mt-2" type="button">Add name without photo</button>
+          <p id="enroll-message" class="notice mt-3 text-sm" role="status" hidden></p>
+          <details id="demo-tips" class="section-rule mt-3">
+            <summary class="demo-summary text-sm font-semibold">Live demo checklist</summary>
+            <ol class="demo-steps muted text-sm">
+              <li>Start the camera, then enroll someone while the feed is live. The new template is available immediately.</li>
+              <li>For the standing test, face the lens in even light. Look for the check-in message and the updated counter.</li>
+              <li>Have the person step out of frame, then start a new session. Walk across the frame with your face visible to the camera.</li>
+            </ol>
+          </details>
+        </section>
+      </div>
+
+      <div class="grid min-w-0 gap-5">
+        <section class="panel p-4 sm:p-5" aria-labelledby="log-heading">
+          <div class="mb-3 flex flex-wrap items-center justify-between gap-2">
+            <h2 id="log-heading" class="text-lg font-semibold">Attendance log</h2>
+            <button id="csv-export" type="button" class="btn">Download CSV</button>
+          </div>
+          <div class="mb-3 grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-2">
+            <label class="min-w-0 text-xs font-semibold">Find a member
+              <input id="log-search" class="field mt-1" type="search" placeholder="Search by name" autocomplete="off">
+            </label>
+            <label class="min-w-0 text-xs font-semibold">Show records
+              <select id="log-scope" class="field mt-1"><option value="session">Current session</option><option value="all">All sessions</option></select>
+            </label>
+          </div>
+          <div class="table-frame">
+            <table class="w-full text-sm" aria-label="Recorded attendance">
+              <thead class="text-xs">
+                <tr><th scope="col">Member</th><th scope="col">Check-in time</th><th scope="col" title="Lower face distance means a closer match">Distance</th></tr>
+              </thead>
+              <tbody id="log-tbody"></tbody>
+            </table>
+            <p id="log-empty" class="muted px-3 py-5 text-sm">No check-ins in this session.</p>
+          </div>
+          <div class="mt-2 flex items-center justify-between gap-2">
+            <span id="log-count" class="muted text-xs">0 records</span>
+            <button id="log-more" class="btn btn-quiet" type="button" hidden>Show more</button>
+            <button id="clear-log" class="btn btn-quiet btn-danger" type="button">Clear log</button>
+          </div>
+          <p id="log-message" class="muted text-xs" role="status"></p>
+        </section>
+
+        <section class="panel p-4 sm:p-5" aria-labelledby="review-heading">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h2 id="review-heading" class="text-lg font-semibold">Review &amp; manual check-in <span id="review-count" class="badge numeric">0</span></h2>
+            <button id="manual-open" class="btn" type="button">Manual check-in</button>
+          </div>
+          <p id="review-empty" class="muted mt-2 text-sm">No matches waiting for review. You can check in any enrolled member manually.</p>
+          <ul id="review-list" class="queue-list mt-2" aria-label="Pending reviews" hidden></ul>
+          <p class="muted mt-2 text-xs">Reviews expire after 10 minutes and aren’t saved or backed up. No photos are kept.</p>
+          <p id="review-message" class="notice mt-3 text-sm" role="status" hidden></p>
+        </section>
+
+        <section class="panel p-4 sm:p-5" aria-labelledby="backup-heading">
+          <h2 id="backup-heading" class="text-lg font-semibold">Backup &amp; restore</h2>
+          <p class="muted mt-1 text-sm">Save your roster and attendance history before clearing site data or moving to another browser.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <button id="export-backup" class="btn" type="button">Export Backup</button>
+            <button id="import-backup" class="btn" type="button">Import Backup</button>
+            <input id="import-file" type="file" accept=".json,application/json" aria-label="Choose a backup JSON file" hidden>
+          </div>
+          <p class="muted mt-3 text-xs">Backups include face templates and names in unencrypted JSON. Keep them private.</p>
+          <p id="backup-message" class="notice mt-3 text-sm" role="status" hidden></p>
+        </section>
+
+        <section class="panel p-4 sm:p-5" aria-labelledby="roster-heading">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h2 id="roster-heading" class="text-lg font-semibold">Enrolled members <span id="roster-count" class="badge numeric">0</span></h2>
+            <button id="clear-roster" class="btn btn-quiet btn-danger" type="button">Clear roster</button>
+          </div>
+          <div class="mt-2 grid grid-cols-2 gap-2 text-sm">
+            <p class="notice"><span id="present-count" class="present numeric font-semibold">0</span> present</p>
+            <p class="notice"><span id="absent-count" class="numeric font-semibold">0</span> not yet</p>
+          </div>
+          <label for="roster-filter" class="mt-2 block text-xs font-semibold">Show roster</label>
+          <select id="roster-filter" class="field mt-1"><option value="all">All members</option><option value="present">Present this session</option><option value="absent">Not yet checked in</option></select>
+          <p id="roster-empty" class="muted mt-2 text-sm">No members enrolled. Add a photo to begin.</p>
+          <ul id="roster-list" class="mt-2 max-h-56 overflow-auto" aria-label="Enrolled members"></ul>
+          <p id="roster-message" class="muted mt-1 text-xs" role="status"></p>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer class="section-rule">
+    <div class="shell muted flex flex-wrap justify-between gap-x-4 gap-y-1 py-4 text-xs">
+      <p>CrabBots Attendance Tracker</p><p>Face matching and attendance data stay on this device.</p>
+    </div>
+  </footer>
+  <dialog id="demo-welcome" class="dialog demo-welcome panel" aria-labelledby="demo-welcome-title" aria-describedby="demo-welcome-intro">
+    <p class="eyebrow">First launch · CrabBots Attendance</p>
+    <h2 id="demo-welcome-title" class="demo-welcome-title">Try the guided demo</h2>
+    <p id="demo-welcome-intro" class="muted mt-2 text-sm">See how camera check-in works before using it at a meeting. Practice won’t change your weekly attendance.</p>
+    <ol class="welcome-steps text-sm" role="list">
+      <li><span class="numeric text-xs" aria-hidden="true">01</span> Enroll a participant’s photo</li>
+      <li><span class="numeric text-xs" aria-hidden="true">02</span> Check in while standing still</li>
+      <li><span class="numeric text-xs" aria-hidden="true">03</span> Check in while walking past</li>
+    </ol>
+    <p class="muted mb-3 text-xs">Not ready? Open Guided demo from the console whenever you like.</p>
+    <div class="flex flex-wrap justify-end gap-2">
+      <button id="welcome-later" class="btn" type="button">Not now</button>
+      <button id="welcome-start" class="btn btn-primary" type="button" autofocus>Start guided demo</button>
+    </div>
+  </dialog>
+  <dialog id="decision" class="dialog panel" aria-labelledby="decision-title" aria-describedby="decision-detail">
+    <h2 id="decision-title" class="text-lg font-semibold"></h2>
+    <p id="decision-detail" class="muted mt-2 break-words text-sm"></p>
+    <form method="dialog" class="mt-5 flex flex-wrap justify-end gap-2">
+      <button id="cancel-action" class="btn" type="submit" value="cancel" autofocus>Cancel</button>
+      <button id="confirm-action" class="btn btn-primary" type="submit" value="accept"></button>
+    </form>
+  </dialog>
+  <dialog id="manual-dialog" class="dialog panel" aria-labelledby="manual-title">
+    <h2 id="manual-title" class="text-lg font-semibold">Manual check-in</h2>
+    <p id="manual-context" class="muted mt-2 text-sm">Confirm the member in person before recording attendance.</p>
+    <form id="manual-form" class="mt-4" novalidate>
+      <label for="manual-member" class="text-sm font-semibold">Roster member</label>
+      <select id="manual-member" class="field mt-1" required></select>
+      <p id="manual-message" class="notice mt-3 text-sm" role="status" hidden></p>
+      <div class="mt-4 flex flex-wrap justify-end gap-2">
+        <button id="manual-cancel" class="btn" type="button">Cancel</button>
+        <button id="manual-save" class="btn btn-primary" type="submit">Record check-in</button>
+      </div>
+    </form>
+  </dialog>
+  <dialog id="help-dialog" class="dialog dialog-wide panel" aria-labelledby="help-title">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <h2 id="help-title" class="text-lg font-semibold">Troubleshooting</h2>
+      <form method="dialog"><button class="btn" type="submit">Close</button></form>
+    </div>
+    <p class="muted mt-2 text-sm">Use the code shown next to an error. The diagnostic report leaves out names, attendance records, photos, face templates, and device IDs.</p>
+    <pre id="diagnostic-status" class="notice muted mt-3 overflow-auto text-xs"></pre>
+    <div class="mt-3 flex flex-wrap gap-2">
+      <button id="copy-diagnostics" class="btn" type="button">Copy diagnostics</button>
+      <button id="download-diagnostics" class="btn" type="button">Download diagnostics</button>
+    </div>
+    <p id="help-message" class="notice mt-2 text-sm" role="status" hidden></p>
+    <details class="mt-3">
+      <summary class="demo-summary text-sm font-semibold">Error code reference</summary>
+      <dl id="error-guide" class="error-guide text-sm"></dl>
+    </details>
+  </dialog>
+
+  <script>
+  'use strict';
+  (() => {
+    const $ = id => document.getElementById(id);
+    const video = $('webcam'), overlay = $('overlay');
+    const APP = 'crabbots-attendance';
+    const STORE = 'crabbots_attendance_v3', LEGACY_SNAPSHOT = 'crabbots_attendance_v2';
+    const PREFERENCES = 'crabbots_settings_v1';
+    const DEMO_WELCOME_SEEN = 'crabbots_demo_welcome_seen';
+    const LEGACY_ROSTER = 'crabbots_roster_v1', LEGACY_LOG = 'crabbots_log_v1';
+    const VERSION = 3, DEFAULT_THRESHOLD = 0.55;
+    const COOLDOWN = 30 * 60 * 1000;
+    const REVIEW_TTL = 10 * 60 * 1000, REVIEW_LIMIT = 12, DEMO_WINDOW = 22000;
+    const ERROR_GUIDE = {
+      'CB-APP-01': 'An unexpected browser error occurred. Export a backup if possible, then reload and retry.',
+      'CB-CAM-01': 'Camera permission denied. Allow camera access in site settings, then try again.',
+      'CB-CAM-02': 'No usable camera found. Connect a webcam or choose another video input.',
+      'CB-CAM-03': 'Camera is busy or could not open. Close other video apps and restart the camera.',
+      'CB-CAM-04': 'Selected camera is unavailable. Refresh the list and choose another input.',
+      'CB-CAM-05': 'Camera access is blocked. Open the published HTTPS page directly in a recent browser.',
+      'CB-CAM-06': 'Camera disconnected. Reconnect it, refresh the list, then start the camera.',
+      'CB-CAM-07': 'Camera preview did not start. Check the connection and try the system default camera.',
+      'CB-CAM-08': 'Could not list devices. Try the system default camera or refresh the page.',
+      'CB-MDL-01': 'Face library did not load. Check internet access and retry models; manual check-in still works.',
+      'CB-MDL-02': 'Face models did not load. Check internet access and CDN filtering, then retry models.',
+      'CB-MDL-03': 'Face matching was interrupted. Restart the camera or reload the page if it continues.',
+      'CB-PHO-01': 'Enter a member name of up to 60 characters.',
+      'CB-PHO-02': 'That name is already on the roster. Use a distinct name or update the manual-only entry with a photo.',
+      'CB-PHO-03': 'Select a JPEG, PNG, or WebP photo up to 5 MB.',
+      'CB-PHO-04': 'The photo could not be opened or is too large to process. Resize it or try another file.',
+      'CB-PHO-05': 'No face detected. Use a clear, well-lit photo facing the camera.',
+      'CB-PHO-06': 'More than one face detected. Crop the photo to a single member and retry.',
+      'CB-PHO-07': 'Face enrollment could not finish. Retry with a different photo or use manual enrollment.',
+      'CB-STO-01': 'Browser data could not be saved. Export a backup before closing; allow site data or free storage.',
+      'CB-STO-02': 'Saved data could not be read and was left untouched. Restore a known-good backup.',
+      'CB-STO-03': 'Camera or match preferences could not be saved. Check browser site storage.',
+      'CB-BKP-01': 'Choose a non-empty CrabBots JSON backup up to 12 MB.',
+      'CB-BKP-02': 'This file could not be read as JSON. Choose an exported CrabBots backup.',
+      'CB-BKP-03': 'The backup format or version is invalid. Use a known-good CrabBots backup.',
+      'CB-BKP-04': 'The backup could not be stored. Existing data was not replaced.',
+      'CB-OUT-01': 'Download could not start. Check whether this browser allows downloads on this page.',
+      'CB-OUT-02': 'Clipboard access unavailable. Download diagnostics instead.',
+      'CB-CHK-01': 'This member already checked in for this session. No duplicate was recorded.',
+      'CB-CHK-02': 'Choose a member from the current roster.',
+      'CB-DEM-01': 'Start the camera before arming the demo check.',
+      'CB-DEM-02': 'No completed match in time. Try again with better lighting and the face fully visible.',
+      'CB-DEM-03': 'A camera change interrupted the demo check. Arm that step again.'
+    };
+    const FAST_SIZE = 320, DETAIL_SIZE = 448, MAX_FRAME_EDGE = 960;
+    const BORDERLINE_WINDOW = 850, DISTINCT_MARGIN = .045, STRONG_MARGIN = .08;
+    const MAX_BACKUP = 12 * 1024 * 1024, MAX_PHOTO = 5 * 1024 * 1024;
+    const MODEL_BASE = 'https://cdn.jsdelivr.net/npm/@vladmandic/face-api@1.7.8/';
+    const LIBRARY_URL = MODEL_BASE + 'dist/face-api.js';
+    const LIBRARY_INTEGRITY = 'sha384-q3LYsrCr9+RHrLn4uu/mHOhN6MtvZa9ZMvZEvZr8rQF/2YA5776HKidqVx9mr+Zn';
+    const dateFormat = new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeStyle: 'short' });
+    const timeFormat = new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit' });
+    const fullTime = new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeStyle: 'medium' });
+    const report = new Intl.NumberFormat();
+    let state = { session: createSession(), roster: [], log: [] };
+    let persistenceBlocked = false;
+    let storageState = 'not checked', demo = null, pausedDemo = null, latestPhotoEntry = null;
+    let scanEpoch = 0, demoTimer = 0, manualReviewId = '';
+    let threshold = DEFAULT_THRESHOLD, preferredCamera = '';
+    let modelStatus = 'idle', matcher = null, enrolling = false, importing = false;
+    let stream = null, cameraBusy = false, cameraRun = 0, cameraRequest = 0, devicesRun = 0;
+    let recognitionTimer = 0, recognitionFrame = null, activeDetection = null, recognitionErrors = 0;
+    let misses = 0, lastDetail = -Infinity, feedbackHold = 0;
+    const frameCanvas = document.createElement('canvas');
+    const frameContext = frameCanvas.getContext('2d', { alpha: false });
+    const candidates = new Map();
+    const pendingReviews = new Map(), ignoredReviews = new Map(), recentErrors = [];
+    let cooldown = new Map(), recordLimit = 40;
+
+    function createSession(startedAt = Date.now()) {
+      return {
+        id: globalThis.crypto?.randomUUID?.() ?? `session-${Date.now()}-${Math.random().toString(36).slice(2)}`,
+        startedAt
+      };
+    }
+    const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
+    const nameKey = value => value.normalize('NFKC').trim().replace(/\s+/g, ' ').toLowerCase();
+    const validName = value => typeof value === 'string' && value.trim().length > 0 && value.length <= 60;
+    const validTime = value => Number.isSafeInteger(value) && value >= 0 && value <= 8640000000000000;
+    const validId = value => typeof value === 'string' && /^[a-zA-Z0-9_-]{1,100}$/.test(value);
+    const validDistance = value => typeof value === 'number' && Number.isFinite(value) && value >= 0 && value <= 10;
+    const cleanThreshold = value => Math.round(Math.max(.30, Math.min(.90, value)) * 100) / 100;
+    const media = () => navigator.mediaDevices;
+
+    function notice(id, message = '', tone = '') {
+      const el = $(id);
+      el.dataset.tone = tone;
+      if (el.textContent !== message) el.textContent = message;
+      el.hidden = !message;
+    }
+    function problem(id, code, detail = '', tone = 'error') {
+      if (!Object.prototype.hasOwnProperty.call(ERROR_GUIDE, code)) code = 'CB-APP-01';
+      const now = Date.now(), last = recentErrors[0];
+      if (!last || last.code !== code || now - last.ts > 5000) {
+        recentErrors.unshift({ code, ts: now });
+        if (recentErrors.length > 10) recentErrors.pop();
+      }
+      const message = `[${code}] ${ERROR_GUIDE[code]}${detail ? ` ${detail}` : ''}`;
+      notice(id, message, tone);
+      if (id === 'camera-message' && demo && ['still', 'walk'].includes(demo.step) && !demo.armed) {
+        notice('demo-feedback', message, tone);
+      }
+      if ($('help-dialog').open) $('diagnostic-status').textContent = diagnosticsText();
+    }
+    function coded(code, message) { return Object.assign(new Error(message || code), { code }); }
+
+    function validateRoster(value, allowsManual = false) {
+      if (!Array.isArray(value)) throw new Error('The backup does not contain a roster.');
+      return value.map((row, index) => {
+        if (!object(row) || !validName(row.label) || !Array.isArray(row.descriptors) || (!allowsManual && !row.descriptors.length) ||
+            !row.descriptors.every(d => Array.isArray(d) && d.length === 128 &&
+              d.every(v => typeof v === 'number' && Number.isFinite(v) && Math.abs(v) <= 100))) {
+          throw new Error(`Invalid face template in roster row ${index + 1}.`);
+        }
+        return { label: row.label.trim(), descriptors: row.descriptors };
+      });
+    }
+
+    function validateLog(value, legacySessionId = null, includesMethod = false) {
+      if (!Array.isArray(value)) throw new Error('The backup does not contain an attendance log.');
+      return value.map((row, index) => {
+        if (!object(row) || !validName(row.name) || !validTime(row.ts)) {
+          throw new Error(`Invalid attendance record at row ${index + 1}.`);
+        }
+        if (legacySessionId) {
+          // V1 stored a rounded 1 − distance score, not a probability.
+          const score = typeof row.confidence === 'number' ||
+            (typeof row.confidence === 'string' && row.confidence.trim()) ? Number(row.confidence) : NaN;
+          return { name: row.name.trim(), ts: row.ts, sessionId: legacySessionId,
+            distance: Number.isFinite(score) && score >= 0 && score <= 1 ? Math.round((1 - score) * 100) / 100 : null,
+            approximate: Number.isFinite(score) && score >= 0 && score <= 1, method: 'automatic' };
+        }
+        if (!validId(row.sessionId) || (row.distance !== null && !validDistance(row.distance))) {
+          throw new Error(`Invalid session or match distance in attendance row ${index + 1}.`);
+        }
+        if (includesMethod && row.method !== 'automatic' && row.method !== 'manual') {
+          throw new Error(`Invalid check-in method in row ${index + 1}.`);
+        }
+        const manual = includesMethod && row.method === 'manual';
+        return { name: row.name.trim(), ts: row.ts, sessionId: row.sessionId, distance: manual ? null : row.distance,
+          approximate: !manual && row.approximate === true, method: manual ? 'manual' : 'automatic' };
+      });
+    }
+
+    function readSnapshot(input) {
+      if (!object(input) || input.app !== APP) throw new Error('Choose a CrabBots attendance backup.');
+      if (input.version === 1) {
+        const session = createSession();
+        const log = validateLog(input.log, session.id);
+        session.startedAt = log.reduce((earliest, row) => Math.min(earliest, row.ts), session.startedAt);
+        return { session, roster: validateRoster(input.roster), log };
+      }
+      if (input.version !== 2 && input.version !== VERSION) throw new Error('This backup version is not supported.');
+      if (!object(input.session) || !validId(input.session.id) || !validTime(input.session.startedAt)) {
+        throw new Error('The backup has invalid session information.');
+      }
+      return {
+        session: { id: input.session.id, startedAt: input.session.startedAt },
+        roster: validateRoster(input.roster, input.version === VERSION), log: validateLog(input.log, null, input.version === VERSION)
+      };
+    }
+
+    function snapshot(source = state) {
+      return { app: APP, version: VERSION, session: source.session, roster: source.roster, log: source.log };
+    }
+
+    function storageWarning(code = '', extra = '') {
+      if (code) problem('storage-warning', code, extra, 'warn');
+      else notice('storage-warning');
+    }
+    function persist(next) {
+      // A single localStorage write prevents a half-restored roster or log.
+      try {
+        localStorage.setItem(STORE, JSON.stringify(snapshot(next)));
+        persistenceBlocked = false;
+        storageState = 'writable';
+        storageWarning('');
+        return true;
+      } catch (error) {
+        storageState = 'write failed';
+        storageWarning('CB-STO-01', 'Changes that were not saved are temporary.');
+        return false;
+      }
+    }
+    function commit(next, requireStorage = false) {
+      if (persistenceBlocked && !requireStorage) return false;
+      const saved = persist(next);
+      if (saved || !requireStorage) state = next;
+      return saved;
+    }
+    function loadLocal() {
+      try {
+        const current = localStorage.getItem(STORE);
+        const previous = current === null ? localStorage.getItem(LEGACY_SNAPSHOT) : null;
+        if (current !== null || previous !== null) {
+          try {
+            state = readSnapshot(JSON.parse(current ?? previous));
+            storageState = 'readable';
+            if (previous !== null) persist(state); // Preserve the prior version's snapshot.
+          }
+          catch {
+            persistenceBlocked = true;
+            storageState = 'data unreadable';
+            storageWarning('CB-STO-02');
+          }
+        } else {
+          const roster = localStorage.getItem(LEGACY_ROSTER), log = localStorage.getItem(LEGACY_LOG);
+          if (roster !== null || log !== null) {
+            let legacyDamaged = false;
+            try { if (roster !== null) state.roster = validateRoster(JSON.parse(roster)); }
+            catch { legacyDamaged = true; }
+            try {
+              if (log !== null) {
+                state.log = validateLog(JSON.parse(log), state.session.id);
+                state.session.startedAt = state.log.reduce((min, row) => Math.min(min, row.ts), state.session.startedAt);
+              }
+            } catch { legacyDamaged = true; }
+            if (legacyDamaged) {
+              persistenceBlocked = true;
+              storageState = 'legacy data unreadable';
+              storageWarning('CB-STO-02', 'Any readable older records can still be exported.');
+            } else {
+              persist(state); // The original v1 keys remain intact as a fallback.
+            }
+          } else { persist(state); }
+        }
+        try {
+          const settings = JSON.parse(localStorage.getItem(PREFERENCES) || '{}');
+          if (object(settings) && Number.isFinite(settings.threshold)) threshold = cleanThreshold(settings.threshold);
+          if (object(settings) && typeof settings.deviceId === 'string') preferredCamera = settings.deviceId;
+        } catch { /* Invalid preferences do not affect the roster or log. */ }
+      } catch {
+        storageState = 'unavailable';
+        storageWarning('CB-STO-01', 'Changes are temporary.');
+      }
+    }
+    function savePreferences() {
+      try { localStorage.setItem(PREFERENCES, JSON.stringify({ threshold, deviceId: preferredCamera })); }
+      catch {
+        if (!$('storage-warning').textContent) storageWarning('CB-STO-03');
+      }
+    }
+
+    function rebuildMatcher() {
+      candidates.clear();
+      scanEpoch++;
+      const roster = demo ? (demo.member ? [demo.member] : []) : state.roster;
+      if (modelStatus !== 'ready' || !roster.length) { matcher = null; return; }
+      const identities = new Map();
+      for (const row of roster) {
+        if (!row.descriptors.length) continue;
+        const key = nameKey(row.label);
+        if (!identities.has(key)) identities.set(key, { key, label: row.label, sets: [] });
+        identities.get(key).sets.push(row.descriptors.map(d => new Float32Array(d)));
+      }
+      matcher = identities.size ? [...identities.values()] : null;
+    }
+    function classify(descriptor) {
+      // Rank distinct identities by distance, not detector confidence.
+      let best = null, alternate = null, first = Infinity, second = Infinity;
+      for (const identity of matcher) {
+        let distance = Infinity;
+        for (const set of identity.sets) {
+          let sum = 0;
+          for (const ref of set) sum += window.faceapi.euclideanDistance(ref, descriptor);
+          distance = Math.min(distance, sum / set.length);
+        }
+        if (distance < first) { second = first; alternate = best; first = distance; best = identity; }
+        else if (distance < second) { second = distance; alternate = identity; }
+      }
+      if (!best || !validDistance(first) || first >= threshold) return { type: 'unknown' };
+      if (second - first < DISTINCT_MARGIN) return { type: 'ambiguous', choices: [best.key, alternate.key] };
+      return { type: 'match', best, distance: first, strong: first <= threshold - STRONG_MARGIN };
+    }
+    function setThreshold(value, persistPreference = false) {
+      threshold = cleanThreshold(value);
+      $('threshold-slider').value = threshold;
+      $('threshold-value').textContent = threshold.toFixed(2);
+      candidates.clear();
+      if (persistPreference) savePreferences();
+    }
+    function resetCooldown() {
+      cooldown = new Map();
+      for (const row of state.log) {
+        if (row.sessionId !== state.session.id) continue;
+        const key = nameKey(row.name);
+        if (!cooldown.has(key) || cooldown.get(key) < row.ts) cooldown.set(key, row.ts);
+      }
+    }
+
+    function renderStats() {
+      const current = state.log.filter(row => row.sessionId === state.session.id);
+      const last = current.reduce((best, row) => best === null || row.ts > best ? row.ts : best, null);
+      $('stat-unique').textContent = report.format(new Set(current.map(row => nameKey(row.name))).size);
+      $('stat-checkins').textContent = report.format(current.length);
+      $('stat-enrolled').textContent = report.format(state.roster.length);
+      $('stat-last').textContent = last === null ? 'Not yet' : timeFormat.format(last);
+      $('stat-last').title = last === null ? '' : fullTime.format(last);
+      $('session-caption').textContent = `Current session · Started ${dateFormat.format(state.session.startedAt)}`;
+    }
+    function renderData() {
+      if (latestPhotoEntry && !state.roster.includes(latestPhotoEntry)) latestPhotoEntry = null;
+      if (pausedDemo?.rosterEntry && !state.roster.includes(pausedDemo.rosterEntry)) pausedDemo = null;
+      renderDemo();
+      resetCooldown(); rebuildMatcher(); renderStats(); renderLog(); renderRoster(); renderReview(); renderControls();
+    }
+    function visibleLog() {
+      const query = nameKey($('log-search').value), all = $('log-scope').value === 'all';
+      return state.log.filter(row => (all || row.sessionId === state.session.id) &&
+        (!query || nameKey(row.name).includes(query))).sort((a, b) => b.ts - a.ts);
+    }
+    function renderLog() {
+      const rows = visibleLog(), fragment = document.createDocumentFragment();
+      for (const row of rows.slice(0, recordLimit)) {
+        const tr = document.createElement('tr');
+        const member = tr.insertCell(), time = tr.insertCell(), distance = tr.insertCell();
+        member.className = 'font-semibold';
+        member.textContent = row.name;
+        const method = document.createElement('span');
+        method.className = 'muted block text-xs';
+        method.textContent = row.method === 'manual' ? 'Manually verified' : 'Automatic';
+        member.append(method);
+        const stamp = document.createElement('time');
+        stamp.dateTime = new Date(row.ts).toISOString();
+        stamp.textContent = $('log-scope').value === 'all' ? dateFormat.format(row.ts) : timeFormat.format(row.ts);
+        stamp.title = fullTime.format(row.ts);
+        time.className = 'muted numeric';
+        time.append(stamp);
+        distance.className = 'muted numeric';
+        distance.textContent = row.distance === null ? 'N/A' : `${row.approximate ? '≈' : ''}${row.distance.toFixed(2)}`;
+        if (row.approximate) distance.title = 'Estimated from a legacy backup score';
+        fragment.append(tr);
+      }
+      $('log-tbody').replaceChildren(fragment);
+      $('log-empty').hidden = rows.length > 0;
+      $('log-empty').textContent = $('log-search').value.trim() ? 'No check-ins match your search.' :
+        $('log-scope').value === 'all' ? 'No check-ins recorded.' : 'No check-ins in this session.';
+      $('log-count').textContent = rows.length > recordLimit ?
+        `${report.format(recordLimit)} of ${report.format(rows.length)} records` :
+        `${report.format(rows.length)} ${rows.length === 1 ? 'record' : 'records'}`;
+      $('log-more').hidden = rows.length <= recordLimit;
+      $('csv-export').disabled = rows.length === 0;
+      $('clear-log').disabled = !state.log.length || persistenceBlocked || !!demo;
+    }
+    function renderRoster() {
+      const fragment = document.createDocumentFragment();
+      const filter = $('roster-filter').value;
+      let count = 0, present = 0;
+      state.roster.forEach((row, index) => {
+        const checkedIn = cooldown.has(nameKey(row.label));
+        if (checkedIn) present++;
+        if ((filter === 'present' && !checkedIn) || (filter === 'absent' && checkedIn)) return;
+        count++;
+        const item = document.createElement('li');
+        item.className = 'section-rule flex items-center justify-between gap-2 text-sm';
+        const name = document.createElement('span');
+        name.className = 'min-w-0 break-words';
+        name.textContent = row.label;
+        const meta = document.createElement('span');
+        meta.className = `block text-xs ${checkedIn ? 'present' : 'muted'}`;
+        meta.textContent = `${checkedIn ? 'Present' : 'Not yet checked in'}${row.descriptors.length ? '' : ' · Manual only'}`;
+        name.append(meta);
+        const remove = document.createElement('button');
+        remove.className = 'btn btn-quiet btn-danger shrink-0';
+        remove.type = 'button';
+        remove.textContent = 'Remove';
+        remove.disabled = persistenceBlocked || !!demo;
+        remove.setAttribute('aria-label', `Remove ${row.label}`);
+        remove.addEventListener('click', () => removeMember(row, index));
+        item.append(name, remove);
+        fragment.append(item);
+      });
+      $('roster-list').replaceChildren(fragment);
+      $('roster-list').hidden = !count;
+      $('roster-empty').hidden = !!count;
+      $('roster-empty').textContent = state.roster.length ? 'No members match this filter.' : 'No members yet. Add a name with or without a photo.';
+      $('roster-count').textContent = report.format(state.roster.length);
+      $('present-count').textContent = report.format(present);
+      $('absent-count').textContent = report.format(state.roster.length - present);
+      $('clear-roster').disabled = !state.roster.length || persistenceBlocked || !!demo;
+    }
+    function pruneReviews() {
+      const now = Date.now(), keys = new Set(state.roster.map(row => nameKey(row.label)));
+      for (const [id, item] of pendingReviews) {
+        if (item.sessionId !== state.session.id || now - item.ts >= REVIEW_TTL ||
+            !item.keys.some(key => keys.has(key) && !cooldown.has(key))) pendingReviews.delete(id);
+      }
+      for (const [id, until] of ignoredReviews) if (until <= now) ignoredReviews.delete(id);
+    }
+    function enqueueReview(type, keys) {
+      const missing = keys.filter(key => !cooldown.has(key));
+      if (!missing.length) return false;
+      const id = JSON.stringify([type, ...keys.slice().sort()]);
+      if (pendingReviews.has(id) || (ignoredReviews.get(id) ?? 0) > Date.now()) return false;
+      if (pendingReviews.size >= REVIEW_LIMIT) pendingReviews.delete(pendingReviews.keys().next().value);
+      pendingReviews.set(id, { type, keys, ts: Date.now(), sessionId: state.session.id });
+      return true;
+    }
+    function renderReview() {
+      pruneReviews();
+      const fragment = document.createDocumentFragment();
+      for (const [id, item] of [...pendingReviews].reverse()) {
+        const li = document.createElement('li');
+        li.className = 'section-rule py-2 text-sm';
+        const heading = document.createElement('p');
+        heading.className = 'font-semibold';
+        heading.textContent = item.type === 'ambiguous' ? 'Similar matches' : 'Unconfirmed match';
+        const detail = document.createElement('p');
+        detail.className = 'muted text-xs';
+        const suggestion = item.type !== 'ambiguous' && state.roster.find(row => nameKey(row.label) === item.keys[0]);
+        detail.textContent = `${timeFormat.format(item.ts)} · ${suggestion ? `Possible match: ${suggestion.label}` : 'Verify the member in person'}`;
+        const actions = document.createElement('div');
+        actions.className = 'mt-2 flex flex-wrap gap-2';
+        const resolve = document.createElement('button'), dismiss = document.createElement('button');
+        resolve.className = 'btn';
+        dismiss.className = 'btn btn-quiet';
+        resolve.type = dismiss.type = 'button';
+        resolve.textContent = 'Review';
+        dismiss.textContent = 'Dismiss';
+        resolve.disabled = !!demo || persistenceBlocked;
+        dismiss.disabled = !!demo;
+        resolve.addEventListener('click', () => openManual(id));
+        dismiss.addEventListener('click', () => {
+          pendingReviews.delete(id);
+          ignoredReviews.set(id, Date.now() + 60000);
+          renderReview();
+          $('manual-open').focus();
+          notice('review-message', 'Review dismissed. No check-in was recorded.');
+        });
+        actions.append(resolve, dismiss);
+        li.append(heading, detail, actions);
+        fragment.append(li);
+      }
+      $('review-list').replaceChildren(fragment);
+      $('review-list').hidden = !pendingReviews.size;
+      $('review-empty').hidden = !!pendingReviews.size;
+      $('review-count').textContent = report.format(pendingReviews.size);
+    }
+    function openManual(id = '') {
+      if (demo || importing || persistenceBlocked || !state.roster.length) return;
+      const item = pendingReviews.get(id), select = $('manual-member');
+      manualReviewId = item ? id : '';
+      select.replaceChildren(new Option('Choose a member', ''));
+      const members = [...new Map(state.roster.map(row => [nameKey(row.label), row])).values()];
+      members.sort((a, b) => a.label.localeCompare(b.label));
+      for (const row of members) {
+        const key = nameKey(row.label);
+        select.add(new Option(`${row.label}${cooldown.has(key) ? ' (already present)' : ''}`, key));
+      }
+      $('manual-context').textContent = item ? 'This face was not checked in automatically. Verify the member in person before recording.' :
+        'Confirm the member in person before recording attendance.';
+      notice('manual-message');
+      $('manual-dialog').showModal();
+      select.focus();
+    }
+    function submitManual(event) {
+      event.preventDefault();
+      if (demo || persistenceBlocked) return;
+      const key = $('manual-member').value, member = state.roster.find(row => nameKey(row.label) === key);
+      if (!member) { problem('manual-message', 'CB-CHK-02'); return; }
+      if (cooldown.has(key)) { problem('manual-message', 'CB-CHK-01'); return; }
+      if (!recordCheckIn(member.label, null, 'manual')) return;
+      if (manualReviewId) {
+        pendingReviews.delete(manualReviewId);
+        ignoredReviews.set(manualReviewId, Date.now() + 60000);
+      }
+      renderStats(); renderLog(); renderRoster(); renderReview();
+      $('manual-dialog').close();
+      $('manual-open').focus();
+      const message = `${member.label} was manually checked in.`;
+      notice('review-message', message, 'good');
+      notice('log-message', message);
+    }
+    function diagnosticsText() {
+      const camera = stream && video.videoWidth ? `live (${video.videoWidth} × ${video.videoHeight})` :
+        cameraBusy ? 'connecting' : 'not running';
+      return [
+        `CrabBots Attendance console · version ${VERSION}`,
+        `Secure page: ${window.isSecureContext ? 'yes' : 'no'}`, `Camera API: ${media()?.getUserMedia ? 'available' : 'unavailable'}`,
+        `Camera: ${camera}`, `Models: ${modelStatus}`, `Browser storage: ${storageState}`, '',
+        ...(recentErrors.length ? ['Recent codes (most recent first):', ...recentErrors.map(row => `${new Date(row.ts).toISOString()}  ${row.code}`)] :
+          ['No error codes recorded since opening this page.'])
+      ].join('\n');
+    }
+    function openHelp() {
+      $('diagnostic-status').textContent = diagnosticsText();
+      notice('help-message');
+      if (!$('error-guide').childElementCount) {
+        const fragment = document.createDocumentFragment();
+        for (const [code, tip] of Object.entries(ERROR_GUIDE)) {
+          const group = document.createElement('div'), term = document.createElement('dt'), desc = document.createElement('dd');
+          const label = document.createElement('code');
+          label.textContent = code;
+          term.append(label); desc.textContent = tip; desc.className = 'muted';
+          group.append(term, desc); fragment.append(group);
+        }
+        $('error-guide').append(fragment);
+      }
+      $('help-dialog').showModal();
+    }
+    async function copyDiagnostics() {
+      try {
+        await navigator.clipboard.writeText(diagnosticsText());
+        notice('help-message', 'Diagnostics copied.', 'good');
+      } catch { problem('help-message', 'CB-OUT-02'); }
+    }
+    function downloadDiagnostics() {
+      try {
+        download(diagnosticsText(), `crabbots-diagnostics-${filenameStamp()}.txt`, 'text/plain;charset=utf-8');
+        notice('help-message', 'Diagnostics download started.', 'good');
+      } catch { problem('help-message', 'CB-OUT-01'); }
+    }
+    function maybeShowDemoWelcome() {
+      try { if (localStorage.getItem(DEMO_WELCOME_SEEN) === '1') return; } catch {}
+      try { if (sessionStorage.getItem(DEMO_WELCOME_SEEN) === '1') return; } catch {}
+      const dialog = $('demo-welcome');
+      if (typeof dialog.showModal !== 'function') return;
+      dialog.showModal();
+      try { localStorage.setItem(DEMO_WELCOME_SEEN, '1'); }
+      catch { try { sessionStorage.setItem(DEMO_WELCOME_SEEN, '1'); } catch {} }
+    }
+    const demoRoster = () => state.roster.filter(entry => entry.descriptors.length);
+    function fillDemoRosterChoices() {
+      const eligible = demoRoster(), select = $('demo-roster-member');
+      const options = document.createDocumentFragment();
+      options.append(new Option('Choose a photo-enrolled member', ''));
+      eligible.forEach((entry, index) => options.append(new Option(entry.label, String(index))));
+      select.replaceChildren(options);
+      const selectedIndex = eligible.indexOf(demo.selectedRosterEntry);
+      if (selectedIndex >= 0) select.value = String(selectedIndex);
+      else demo.selectedRosterEntry = null;
+      $('demo-roster-choice').hidden = !eligible.length;
+      $('demo-use-member').disabled = selectedIndex < 0;
+    }
+    function renderDemo() {
+      $('demo-panel').hidden = !demo;
+      $('session-actions').hidden = !!demo;
+      $('start-demo').textContent = !pausedDemo ? 'Guided demo' : pausedDemo.step === 'done' ? 'View demo results' : 'Resume demo';
+      $('stage-mode').hidden = !demo;
+      $('weekly-enrollment').hidden = !!demo;
+      if (!demo) return;
+      for (const step of ['enroll', 'still', 'walk']) {
+        const passed = !!demo.results[step], active = demo.step === step;
+        const item = $(`step-${step}`);
+        item.dataset.state = passed ? 'pass' : active ? 'active' : 'pending';
+        if (active) item.setAttribute('aria-current', 'step');
+        else item.removeAttribute('aria-current');
+        $(`status-${step}`).textContent = passed ? 'Passed' : active ? demo.armed ? 'Running' : 'Current step' : 'Pending';
+      }
+      const checkedPhoto = demo.results.enroll;
+      $('demo-enrollment').hidden = demo.step !== 'enroll';
+      $('demo-action').hidden = demo.step === 'enroll' || demo.step === 'done';
+      $('exit-demo').textContent = demo.step === 'done' ? 'Exit demo' : 'Pause demo';
+      $('demo-restart').hidden = !checkedPhoto;
+      $('demo-export').hidden = !demo.results.enroll;
+      const participant = $('demo-participant');
+      participant.hidden = !checkedPhoto;
+      participant.textContent = !checkedPhoto ? '' : demo.member?.label && demo.rosterEntry ?
+        `Practice participant: ${demo.member.label} (enrolled photo).` :
+        checkedPhoto.source === 'roster' ? 'Practice participant: enrolled roster photo.' : 'Practice participant: temporary demo photo.';
+      renderDemoAction();
+    }
+    function renderDemoAction() {
+      if (!demo) return;
+      const action = $('demo-action');
+      action.disabled = cameraBusy || modelStatus !== 'ready';
+      action.textContent = demo.armed ? 'Cancel this check' : cameraBusy ? 'Connecting camera…' :
+        modelStatus === 'loading' ? 'Loading face models…' :
+        modelStatus !== 'ready' ? 'Face models unavailable' :
+        !stream ? 'Start camera for demo' : demo.step === 'still' ? 'Arm standing check' : 'Arm walk-by check';
+    }
+    function newDemo() {
+      return { step: 'enroll', results: {}, startedAt: Date.now(), member: null, rosterEntry: null, selectedRosterEntry: null, armed: null };
+    }
+    function demoPrompt() {
+      if (demo.step === 'enroll') return demoRoster().length ?
+        'Choose an enrolled photo or upload a temporary photo to begin.' : 'Upload a clear photo to begin. The camera can stay off for this step.';
+      if (demo.step === 'done') return 'All three checks passed. Download your results or restart with another participant.';
+      const test = demo.step === 'still' ? 'standing' : 'walk-by';
+      return stream ? `Arm the ${test} check when your participant is ready.` :
+        `Start the camera, then arm the ${test} check.`;
+    }
+    function acceptDemoPhoto(entry, fromRoster, duration) {
+      demo.member = entry;
+      demo.rosterEntry = fromRoster ? entry : null;
+      demo.selectedRosterEntry = null;
+      demo.results.enroll = { passed: true, source: fromRoster ? 'roster' : 'temporary',
+        ...(duration === undefined ? {} : { timeToCompleteMs: duration }) };
+      demo.step = 'still';
+      $('demo-enroll-form').reset();
+      notice('demo-enroll-message');
+    }
+    function useDemoRosterMember() {
+      if (enrollmentUnavailable() || demo?.step !== 'enroll') return;
+      const entry = demo.selectedRosterEntry;
+      if (!entry || !state.roster.includes(entry)) { fillDemoRosterChoices(); return; }
+      acceptDemoPhoto(entry, true);
+      rebuildMatcher(); renderDemo(); renderControls();
+      notice('demo-message', `Enrolled photo reused. ${demoPrompt()}`, 'good');
+      ($('demo-action').disabled ? $('demo-heading') : $('demo-action')).focus();
+    }
+    function enterDemo() {
+      if (demo || enrolling || importing) return;
+      const resuming = !!pausedDemo;
+      demo = pausedDemo || newDemo();
+      pausedDemo = null;
+      let reuse = null;
+      if (!resuming) {
+        const eligible = demoRoster();
+        reuse = eligible.includes(latestPhotoEntry) ? latestPhotoEntry : eligible.length === 1 ? eligible[0] : null;
+        if (reuse) {
+          acceptDemoPhoto(reuse, true);
+        } else {
+          $('demo-enroll-form').reset();
+          notice('demo-enroll-message');
+        }
+      }
+      if (demo.step === 'enroll') fillDemoRosterChoices();
+      notice('demo-message', `${resuming && demo.step !== 'done' ? 'Progress restored. ' : reuse ? 'Enrolled photo reused. ' : ''}${demoPrompt()}`,
+        demo.step === 'done' || reuse ? 'good' : '');
+      notice('demo-feedback'); feedbackHold = 0;
+      rebuildMatcher(); renderDemo(); renderRoster(); renderLog(); renderReview(); renderControls();
+      clearOverlay();
+      if (stream) scanFeedback(demo.step === 'enroll' ? 'Demo: choose or upload a photo' :
+        demo.step === 'done' ? 'Guided demo complete' : 'Demo: arm the next check');
+      $('demo-heading').focus();
+    }
+    function exitDemo() {
+      if (!demo || enrolling) return;
+      clearTimeout(demoTimer);
+      demo.armed = null;
+      pausedDemo = demo;
+      demo = null; feedbackHold = 0;
+      if (stream || cameraBusy) stopCamera();
+      notice('demo-feedback');
+      renderData();
+      $('start-demo').focus();
+    }
+    async function restartDemo() {
+      const current = demo;
+      if (!current || enrolling || !await ask('Restart the guided demo?',
+        'This clears the practice results and lets you choose a photo again. Weekly attendance will not change.', 'Restart demo') ||
+        demo !== current) return;
+      clearTimeout(demoTimer);
+      demo = newDemo();
+      $('demo-enroll-form').reset();
+      fillDemoRosterChoices();
+      notice('demo-enroll-message'); notice('demo-feedback');
+      notice('demo-message', demoPrompt());
+      feedbackHold = 0;
+      clearOverlay(); rebuildMatcher(); renderDemo(); renderControls();
+      $('demo-heading').focus();
+    }
+    function disarmDemo(code = '') {
+      if (!demo?.armed) return;
+      clearTimeout(demoTimer);
+      demo.armed = null;
+      scanEpoch++;
+      notice('demo-feedback');
+      if (code) problem('demo-message', code, '', 'warn');
+      else notice('demo-message', 'Check canceled. You can arm this step again.');
+      renderDemo();
+    }
+    async function runDemoAction() {
+      const current = demo;
+      if (!current || !['still', 'walk'].includes(current.step) || cameraBusy) return;
+      if (demo.armed) { disarmDemo(); return; }
+      if (!stream) {
+        if (!media()?.getUserMedia) { problem('demo-feedback', 'CB-CAM-05'); return; }
+        const device = $('camera-select').value;
+        await startCamera(device, device ? '' : null);
+        if (demo === current && stream) {
+          notice('demo-message', demoPrompt());
+          if (document.activeElement === document.body) $('demo-action').focus();
+        }
+        return;
+      }
+      const arm = { started: performance.now(), samples: [], step: demo.step, clear: demo.step !== 'walk' };
+      demo.armed = arm;
+      scanEpoch++;
+      const instruction = demo.step === 'still' ? 'Ask the participant to face the lens and hold still briefly.' :
+        'Wait for the clear-frame signal, then walk across with your face visible.';
+      notice('demo-message', instruction);
+      scanFeedback(demo.step === 'still' ? 'Demo: waiting for a steady match' : 'Demo: waiting for a match to cross the frame');
+      demoTimer = setTimeout(() => { if (demo?.armed === arm) disarmDemo('CB-DEM-02'); }, DEMO_WINDOW);
+      renderDemo();
+    }
+    function demoScan(detections, width, height, frameStamp) {
+      const arm = demo.armed;
+      let picked = null;
+      for (const detection of detections) {
+        const match = classify(detection.descriptor);
+        const box = detection.detection.box;
+        if (match.best && (!picked || match.distance < picked.match.distance)) picked = { match, box };
+        new window.faceapi.draw.DrawBox(box, { label: match.best ? 'Demo participant' : 'No match',
+          boxColor: match.best ? '#52dbac' : '#dba566' }).draw(overlay);
+      }
+      if (!arm) {
+        if (performance.now() >= feedbackHold) scanFeedback(demo.step === 'done' ? 'Guided demo complete' : 'Demo: arm the next check');
+        return;
+      }
+      if (frameStamp < arm.started) return;
+      if (!picked) {
+        // A pass must come from a continuous track, not two separate appearances.
+        arm.samples = [];
+        if (arm.step === 'walk' && !detections.length) {
+          arm.clear = true;
+          scanFeedback('Demo: frame clear. Walk across now.');
+        } else if (!arm.clear) {
+          scanFeedback('Demo: clear the frame to begin the walk-by.');
+        }
+        return;
+      }
+      if (!arm.clear) {
+        scanFeedback('Demo: step out of frame before walking.');
+        return;
+      }
+      const point = { x: (picked.box.x + picked.box.width / 2) / width,
+        y: (picked.box.y + picked.box.height / 2) / height, t: frameStamp };
+      arm.samples = arm.samples.filter(p => point.t - p.t < 5200);
+      let reference = null;
+      const elapsed = p => point.t - p.t >= 250;
+      if (arm.step === 'still') {
+        reference = arm.samples.find(p => elapsed(p) && Math.abs(point.x - p.x) <= .045 && Math.abs(point.y - p.y) <= .055);
+        if (arm.samples.some(p => Math.abs(point.x - p.x) > .065 || Math.abs(point.y - p.y) > .08)) {
+          reference = null;
+          arm.samples = [];
+        }
+      } else {
+        reference = arm.samples.find(p => elapsed(p) && Math.abs(point.x - p.x) >= .14);
+      }
+      arm.samples.push(point);
+      if (!reference) {
+        scanFeedback(arm.step === 'still' ? 'Demo: face matched. Hold still.' : 'Demo: face matched. Continue across the frame.');
+        return;
+      }
+      clearTimeout(demoTimer);
+      demo.results[arm.step] = { passed: true, timeToCompleteMs: Math.round(performance.now() - arm.started),
+        ...(arm.step === 'walk' ? { directionInPreview: point.x > reference.x ? 'left to right' : 'right to left' } : {}) };
+      demo.armed = null;
+      demo.step = arm.step === 'still' ? 'walk' : 'done';
+      const restoreFocus = demo.step === 'done' && document.activeElement === $('demo-action');
+      if (demo.step === 'done') { demo.member = null; demo.rosterEntry = null; rebuildMatcher(); }
+      const message = arm.step === 'still' ? 'Standing check passed. Step out of frame, then arm the walk-by check.' :
+        'Walk-by check passed. All three demo steps are complete.';
+      notice('demo-message', message, 'good');
+      notice('demo-feedback');
+      scanFeedback(message, 'good'); feedbackHold = performance.now() + 2200;
+      renderDemo();
+      if (restoreFocus) $('demo-export').focus();
+    }
+    function exportDemo() {
+      if (!demo?.results.enroll) return;
+      try {
+        download(JSON.stringify({ app: APP, type: 'guided-demo', version: VERSION,
+          startedAt: new Date(demo.startedAt).toISOString(), results: demo.results }, null, 2),
+          `crabbots-demo-${filenameStamp()}.json`, 'application/json');
+      } catch { problem('demo-message', 'CB-OUT-01'); }
+    }
+    function ask(title, detail, action) {
+      const dialog = $('decision');
+      if (dialog.open) return Promise.resolve(false);
+      $('decision-title').textContent = title;
+      $('decision-detail').textContent = detail;
+      $('confirm-action').textContent = action;
+      dialog.returnValue = 'cancel';
+      dialog.showModal();
+      return new Promise(resolve => dialog.addEventListener('close', () => resolve(dialog.returnValue === 'accept'), { once: true }));
+    }
+
+    function download(text, filename, type) {
+      const href = URL.createObjectURL(new Blob([text], { type }));
+      const a = document.createElement('a');
+      a.href = href; a.download = filename;
+      document.body.append(a);
+      a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(href), 1500);
+    }
+    function filenameStamp() { return new Date().toISOString().replace(/[:.]/g, '-'); }
+    function exportBackup() {
+      try {
+        const data = { ...snapshot(), exportedAt: new Date().toISOString(), settings: { threshold } };
+        download(JSON.stringify(data), `crabbots-backup-${filenameStamp()}.json`, 'application/json');
+        notice('backup-message', 'Backup download started. Save the file somewhere private.', 'good');
+      } catch { problem('backup-message', 'CB-OUT-01'); }
+    }
+    async function importBackup() {
+      const input = $('import-file'), file = input.files?.[0];
+      if (!file || importing || demo) return;
+      importing = true;
+      renderControls();
+      notice('backup-message', 'Checking backup…');
+      try {
+        if (!file.size || file.size > MAX_BACKUP) throw coded('CB-BKP-01');
+        let payload;
+        try { payload = JSON.parse(await file.text()); }
+        catch { throw coded('CB-BKP-02'); }
+        let restored;
+        try { restored = readSnapshot(payload); } catch (error) { throw coded('CB-BKP-03', error.message); }
+        const summary = `${file.name} contains ${report.format(restored.roster.length)} roster entries and ${report.format(restored.log.length)} check-ins. Restoring replaces the roster and all attendance records in this browser.`;
+        if (!await ask('Replace local data?', summary, 'Restore backup')) {
+          notice('backup-message', 'Restore canceled. Existing data was not changed.');
+          return;
+        }
+        if (!commit(restored, true)) throw coded('CB-BKP-04');
+        pendingReviews.clear(); ignoredReviews.clear();
+        notice('review-message');
+        if (object(payload.settings) && Number.isFinite(payload.settings.threshold)) setThreshold(payload.settings.threshold, true);
+        $('log-search').value = ''; $('log-scope').value = 'session'; recordLimit = 40;
+        renderData();
+        notice('backup-message', 'Backup restored. Your roster and attendance history are saved locally.', 'good');
+      } catch (error) {
+        const code = error.code || 'CB-BKP-03';
+        problem('backup-message', code, code === 'CB-BKP-03' && error.message !== code ? error.message : '');
+      } finally {
+        input.value = ''; importing = false; renderControls();
+      }
+    }
+    function csvField(value) {
+      let text = String(value ?? '');
+      // Prevent spreadsheets from treating member names as formulas.
+      if (/^[\s\u0000-\u001f]*[=+\-@]/u.test(text) || /^[\t\r\n]/u.test(text)) text = "'" + text;
+      return `"${text.replace(/"/g, '""')}"`;
+    }
+    function exportCSV() {
+      const rows = visibleLog();
+      if (!rows.length) return;
+      try {
+        const body = rows.map(row => [row.name, new Date(row.ts).toISOString(),
+          row.distance === null ? '' : row.distance.toFixed(2), row.approximate ? 'Yes' : 'No', row.sessionId,
+          row.method === 'manual' ? 'Manually verified' : 'Automatic'].map(csvField).join(','));
+        download('\uFEFF' + ['Member,Check-in time (UTC),Match distance,Estimated distance,Session ID,Method', ...body].join('\r\n'),
+          `crabbots-attendance-${filenameStamp()}.csv`, 'text/csv;charset=utf-8');
+        notice('log-message', `CSV download started for ${report.format(rows.length)} filtered ${rows.length === 1 ? 'record' : 'records'}.`);
+      } catch { problem('log-message', 'CB-OUT-01'); }
+    }
+
+    function renderControls() {
+      const available = !!media()?.getUserMedia;
+      $('btn-toggle-cam').disabled = cameraBusy || (!stream && (modelStatus !== 'ready' || !available));
+      $('btn-toggle-cam').textContent = cameraBusy ? 'Connecting…' : stream ? 'Stop Camera' : 'Start Camera';
+      $('btn-toggle-cam').classList.toggle('btn-primary', !stream);
+      $('camera-select').disabled = cameraBusy || !available;
+      $('refresh-devices').disabled = cameraBusy || !media()?.enumerateDevices;
+      const enrollmentClosed = enrolling || importing || !!demo || persistenceBlocked;
+      $('enroll-name').disabled = enrollmentClosed;
+      $('enroll-file').disabled = enrollmentClosed;
+      $('enroll-member').disabled = modelStatus !== 'ready' || enrollmentClosed;
+      $('enroll-member').textContent = enrolling && !demo ? 'Processing…' : 'Enroll member';
+      $('add-manual').disabled = enrollmentClosed;
+      const demoEnrollmentClosed = enrolling || demo?.step !== 'enroll';
+      $('demo-enroll-file').disabled = demoEnrollmentClosed;
+      $('demo-enroll-member').disabled = modelStatus !== 'ready' || demoEnrollmentClosed;
+      $('demo-enroll-member').textContent = enrolling && demo ? 'Processing…' : 'Enroll demo photo';
+      notice('demo-model-note', modelStatus === 'ready' ? '' : modelStatus === 'error' ?
+        'Photo upload is unavailable. Use Retry models at the top of the console.' : 'Loading face models for photo enrollment…');
+      $('demo-roster-member').disabled = demoEnrollmentClosed;
+      $('demo-use-member').disabled = demoEnrollmentClosed || !$('demo-roster-member').value;
+      renderDemoAction();
+      $('import-backup').disabled = importing || enrolling || !!demo;
+      $('new-session').disabled = persistenceBlocked || importing || !!demo;
+      $('manual-open').disabled = !state.roster.length || persistenceBlocked || !!demo || importing;
+      $('start-demo').disabled = enrolling || importing;
+      $('exit-demo').disabled = enrolling;
+      $('demo-restart').disabled = enrolling;
+    }
+    function badge(id, status, tone = '') { $(id).dataset.tone = tone; $(id).textContent = status; }
+    function loadLibrary() {
+      if (window.faceapi) return Promise.resolve(window.faceapi);
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = LIBRARY_URL; script.crossOrigin = 'anonymous'; script.integrity = LIBRARY_INTEGRITY;
+        const timeout = setTimeout(() => fail(), 20000);
+        const fail = () => {
+          clearTimeout(timeout);
+          script.remove();
+          reject(new Error('Face-api.js could not be loaded.'));
+        };
+        script.onerror = fail;
+        script.onload = () => {
+          if (!window.faceapi) { fail(); return; }
+          clearTimeout(timeout); resolve(window.faceapi);
+        };
+        document.head.append(script);
+      });
+    }
+    async function warmDetectors(api) {
+      // Compile the live detector paths before the first visitor walks into view.
+      const dummy = document.createElement('canvas');
+      dummy.width = 320; dummy.height = 240;
+      let limit;
+      const warm = async () => {
+        for (const size of [FAST_SIZE, DETAIL_SIZE]) {
+          await api.detectAllFaces(dummy, new api.TinyFaceDetectorOptions({ inputSize: size, scoreThreshold: .5 }));
+        }
+      };
+      try {
+        await Promise.race([warm(), new Promise(resolve => { limit = setTimeout(resolve, 6000); })]);
+      } catch { /* Warm-up is an optimization, not a requirement for model loading. */ }
+      finally { clearTimeout(limit); }
+    }
+    async function loadModels() {
+      if (modelStatus === 'loading' || modelStatus === 'ready') return;
+      modelStatus = 'loading';
+      badge('model-status', 'Loading models', 'warn');
+      $('retry-models').hidden = true;
+      renderControls();
+      let timeout;
+      let loadCode = 'CB-MDL-01';
+      notice('model-warning');
+      try {
+        const api = await loadLibrary();
+        loadCode = 'CB-MDL-02';
+        const loading = Promise.all([api.nets.tinyFaceDetector, api.nets.faceLandmark68Net, api.nets.faceRecognitionNet]
+          .map(net => net.isLoaded ? Promise.resolve() : net.loadFromUri(MODEL_BASE + 'model/')));
+        await Promise.race([loading, new Promise((_, reject) => {
+          timeout = setTimeout(() => reject(new Error('Face models timed out.')), 30000);
+        })]);
+        badge('model-status', 'Preparing detector', 'warn');
+        await warmDetectors(api);
+        modelStatus = 'ready';
+        rebuildMatcher();
+        badge('model-status', 'Models ready', 'good');
+      } catch (error) {
+        modelStatus = 'error';
+        badge('model-status', 'Models unavailable', 'error');
+        $('retry-models').hidden = false;
+        problem('model-warning', loadCode);
+        console.warn('Could not load recognition models:', error.message);
+      } finally { clearTimeout(timeout); renderControls(); }
+    }
+
+    async function refreshDevices(announce = false) {
+      const token = ++devicesRun;
+      if (!media()?.enumerateDevices) {
+        problem('camera-hint', 'CB-CAM-05', '', 'warn');
+        return;
+      }
+      try {
+        const devices = (await media().enumerateDevices()).filter(d => d.kind === 'videoinput');
+        if (token !== devicesRun) return;
+        const select = $('camera-select');
+        select.replaceChildren(new Option('System default camera', ''));
+        const seen = new Set();
+        devices.forEach((d, i) => {
+          if (!d.deviceId || seen.has(d.deviceId)) return;
+          seen.add(d.deviceId);
+          select.add(new Option(d.label || `Camera ${i + 1}`, d.deviceId));
+        });
+        const actual = stream?.getVideoTracks()[0]?.getSettings?.().deviceId;
+        select.value = stream && seen.has(actual) ? actual : seen.has(preferredCamera) ? preferredCamera : '';
+        notice('camera-hint', devices.length && devices.some(d => d.label) ?
+          `${devices.length} video ${devices.length === 1 ? 'input' : 'inputs'} detected.` :
+          'Start the camera and allow access to reveal available inputs.');
+        if (announce && !devices.length) problem('camera-message', 'CB-CAM-02', '', 'warn');
+      } catch {
+        if (token !== devicesRun) return;
+        problem('camera-hint', 'CB-CAM-08', '', 'warn');
+      }
+    }
+    function renderCamera() {
+      const active = !!stream && !cameraBusy;
+      $('cam-placeholder').hidden = active;
+      video.hidden = overlay.hidden = !active;
+      if (!active) scanFeedback('');
+      badge('cam-status', cameraBusy ? 'Connecting' : active ? 'Live' : 'Offline', cameraBusy ? 'warn' : active ? 'good' : '');
+      renderControls();
+    }
+    function scanFeedback(message, tone = '') {
+      notice('scan-feedback', message, tone);
+      if (demo?.armed) notice('demo-feedback', message.replace(/^Demo: /, ''), tone);
+    }
+    function clearOverlay() { overlay.getContext('2d')?.clearRect(0, 0, overlay.width, overlay.height); }
+    function releaseCamera() {
+      if (demo?.armed) disarmDemo('CB-DEM-03');
+      ++cameraRun;
+      clearTimeout(recognitionTimer);
+      if (recognitionFrame !== null) video.cancelVideoFrameCallback?.(recognitionFrame);
+      recognitionFrame = null;
+      feedbackHold = 0; misses = 0; lastDetail = -Infinity; candidates.clear();
+      const old = stream;
+      stream = null;
+      video.srcObject = null;
+      old?.getTracks().forEach(track => track.stop());
+      clearOverlay();
+    }
+    function cameraError(error) {
+      const codes = {
+        NotAllowedError: 'CB-CAM-01', NotFoundError: 'CB-CAM-02',
+        NotReadableError: 'CB-CAM-03', OverconstrainedError: 'CB-CAM-04',
+        SecurityError: 'CB-CAM-05', AbortError: 'CB-CAM-07'
+      };
+      return codes[error.name] || 'CB-CAM-07';
+    }
+    async function openStream(deviceId, token) {
+      if (!media()?.getUserMedia) throw new Error('Camera API unavailable.');
+      const constraints = { width: { ideal: 960 }, height: { ideal: 540 }, frameRate: { ideal: 30 } };
+      if (deviceId) constraints.deviceId = { exact: deviceId };
+      const next = await media().getUserMedia({ video: constraints, audio: false });
+      if (token !== cameraRun) {
+        next.getTracks().forEach(track => track.stop());
+        return false;
+      }
+      stream = next;
+      const track = next.getVideoTracks()[0];
+      if (!track) throw new Error('No video track.');
+      track.addEventListener('ended', () => {
+        if (stream !== next) return;
+        releaseCamera(); cameraBusy = false; renderCamera();
+        problem('camera-message', 'CB-CAM-06', '', 'warn');
+        void refreshDevices();
+      });
+      video.srcObject = next;
+      let timeout;
+      try {
+        await Promise.race([video.play(), new Promise((_, reject) => {
+          timeout = setTimeout(() => reject(new Error('Camera preview did not start.')), 10000);
+        })]);
+      } finally { clearTimeout(timeout); }
+      if (stream !== next || track.readyState === 'ended') throw new Error('Camera disconnected.');
+      overlay.width = video.videoWidth || 640;
+      overlay.height = video.videoHeight || 480;
+      return true;
+    }
+    async function startCamera(deviceId, fallback = null) {
+      if (cameraBusy || modelStatus !== 'ready') return;
+      const request = ++cameraRequest;
+      cameraBusy = true;
+      releaseCamera(); renderCamera();
+      notice('camera-message');
+      notice('demo-feedback');
+      const token = cameraRun;
+      let active = false, failed = false;
+      try {
+        active = await openStream(deviceId, token);
+        if (active) { preferredCamera = deviceId; savePreferences(); }
+      } catch (error) {
+        if (token !== cameraRun) return;
+        failed = true;
+        releaseCamera();
+        const code = cameraError(error);
+        let recoveryMessage = '';
+        if (fallback !== null && fallback !== deviceId) {
+          const recoveryToken = cameraRun;
+          try {
+            active = await openStream(fallback, recoveryToken);
+            if (active) { preferredCamera = fallback; savePreferences(); recoveryMessage = 'The previous camera was restored.'; }
+          } catch {
+            if (recoveryToken === cameraRun) releaseCamera();
+          }
+        }
+        if (request === cameraRequest) problem('camera-message', code, recoveryMessage, active ? 'warn' : 'error');
+      } finally {
+        if (request === cameraRequest) {
+          cameraBusy = false;
+          renderCamera();
+          if (active && stream) {
+            recognitionErrors = 0;
+            scanFeedback(matcher ? 'Scanning for enrolled faces' : 'Enroll a member to start matching');
+            queueRecognition(cameraRun, 0);
+            if (!failed && !matcher && !persistenceBlocked) notice('camera-message',
+              demo ? 'Upload a demo photo to begin the guided checks.' : 'Add a photo to enable automatic check-ins.');
+          }
+          void refreshDevices();
+        }
+      }
+    }
+    function stopCamera() {
+      ++cameraRequest;
+      releaseCamera(); cameraBusy = false; renderCamera(); notice('camera-message');
+    }
+
+    function queueRecognition(token, delay) {
+      recognitionTimer = setTimeout(() => {
+        if (token !== cameraRun || !stream) return;
+        if (!document.hidden && video.readyState >= 2 && video.requestVideoFrameCallback) {
+          recognitionFrame = video.requestVideoFrameCallback(() => {
+            recognitionFrame = null;
+            void recognize(token);
+          });
+        } else void recognize(token);
+      }, delay);
+    }
+    function scanningPaused() {
+      return enrolling || importing || document.hidden ||
+        $('decision').open || $('manual-dialog').open || $('help-dialog').open || $('demo-welcome').open;
+    }
+    async function recognize(token) {
+      if (token !== cameraRun || !stream) return;
+      if (!matcher || (persistenceBlocked && !demo) || video.readyState < 2 || activeDetection || scanningPaused()) {
+        clearOverlay();
+        if (enrolling) scanFeedback('Processing enrollment');
+        else if (demo && demo.step === 'done' && performance.now() >= feedbackHold) scanFeedback('Guided demo complete', 'good');
+        else if (demo?.step === 'enroll') scanFeedback('Demo: upload a photo');
+        else if (persistenceBlocked && !demo) scanFeedback('Restore a backup to enable check-ins', 'warn');
+        else if (!matcher && !demo) scanFeedback('Enroll a member to start matching');
+        queueRecognition(token, document.hidden ? 500 : 100);
+        return;
+      }
+      const started = performance.now(), sessionId = state.session.id, epoch = scanEpoch;
+      let interval = 120;
+      try {
+        const api = window.faceapi;
+        const scale = Math.min(1, MAX_FRAME_EDGE / Math.max(video.videoWidth, video.videoHeight));
+        const width = Math.round(video.videoWidth * scale), height = Math.round(video.videoHeight * scale);
+        if (!width || !height) return;
+        if (frameCanvas.width !== width || frameCanvas.height !== height) {
+          frameCanvas.width = width; frameCanvas.height = height;
+        }
+        // Freeze one frame so detection, landmarks and encoding see the same face position.
+        frameContext.drawImage(video, 0, 0, width, height);
+        const detailed = misses >= 2 && started - lastDetail >= 600;
+        if (detailed) lastDetail = started;
+        const options = new api.TinyFaceDetectorOptions({ inputSize: detailed ? DETAIL_SIZE : FAST_SIZE, scoreThreshold: .5 });
+        activeDetection = Promise.resolve(api.detectAllFaces(frameCanvas, options).withFaceLandmarks().withFaceDescriptors());
+        const detections = await activeDetection;
+        if (token !== cameraRun || sessionId !== state.session.id || epoch !== scanEpoch || !matcher || scanningPaused()) return;
+        misses = detections.length ? 0 : Math.min(misses + 1, 3);
+        if (detections.length) interval = 90;
+        if (overlay.width !== width || overlay.height !== height) { overlay.width = width; overlay.height = height; }
+        clearOverlay();
+        if (demo) {
+          demoScan(detections, width, height, started);
+          recognitionRecovered();
+          return;
+        }
+        const checkedIn = [];
+        const observed = new Set();
+        const stamp = performance.now();
+        for (const [key, candidate] of candidates) if (stamp - candidate.stamp > BORDERLINE_WINDOW) candidates.delete(key);
+        let already = '', pending = false, reviewAdded = false, ambiguous = false;
+        for (const detection of detections) {
+          const match = classify(detection.descriptor);
+          const entry = match.best;
+          if (match.type === 'ambiguous') {
+            ambiguous = true;
+            if (enqueueReview('ambiguous', match.choices)) reviewAdded = true;
+          }
+          if (entry && observed.has(entry.key)) continue; // Multiple boxes in one frame are not multiple observations.
+          if (entry) observed.add(entry.key);
+          const repeat = entry && Date.now() - (cooldown.get(entry.key) ?? -Infinity) < COOLDOWN;
+          const confirmed = entry && (repeat || match.strong || candidates.has(entry.key));
+          if (entry && !confirmed) {
+            candidates.set(entry.key, { stamp }); pending = true;
+            if (enqueueReview('borderline', [entry.key])) reviewAdded = true;
+          }
+          new api.draw.DrawBox(detection.detection.box, {
+            label: confirmed ? entry.label : entry ? 'Confirming' : match.type === 'ambiguous' ? 'Unclear match' : 'No match',
+            boxColor: confirmed ? '#52dbac' : '#dba566'
+          }).draw(overlay);
+          if (confirmed) {
+            candidates.delete(entry.key);
+            if (repeat) already = entry.label;
+            else if (recordCheckIn(entry.label, match.distance)) checkedIn.push(entry.label);
+          }
+        }
+        if (checkedIn.length) {
+          renderStats(); renderLog(); renderRoster(); renderReview();
+          const message = checkedIn.length === 1 ? `${checkedIn[0]} checked in.` : `${checkedIn.length} members checked in.`;
+          notice('log-message', message);
+          scanFeedback(message, 'good');
+          feedbackHold = stamp + 2200;
+        } else if (stamp >= feedbackHold) {
+          if (already) scanFeedback(`${already} · Already checked in`, 'good');
+          else if (pending) scanFeedback('Confirming match · Keep your face in view', 'warn');
+          else if (ambiguous && pendingReviews.size) scanFeedback('Face detected · Review needed', 'warn');
+          else if (detections.length) scanFeedback('Face detected · No reliable match', 'warn');
+          else scanFeedback('Scanning for enrolled faces');
+        }
+        if (!checkedIn.length && reviewAdded) renderReview();
+        recognitionRecovered();
+      } catch (error) {
+        if (token === cameraRun && ++recognitionErrors === 3) {
+          scanFeedback('Matching interrupted', 'warn');
+          problem('camera-message', 'CB-MDL-03', '', 'warn');
+          console.warn('Recognition failed:', error.message);
+        }
+      } finally {
+        activeDetection = null;
+        if (token === cameraRun && stream) queueRecognition(token, recognitionErrors >= 3 ? 1200 : Math.max(0, interval - (performance.now() - started)));
+      }
+    }
+    function recognitionRecovered() {
+      if (recognitionErrors >= 3 && $('camera-message').textContent.startsWith('[CB-MDL-03]')) notice('camera-message');
+      recognitionErrors = 0;
+    }
+    function recordCheckIn(name, distance, method = 'automatic') {
+      if (demo || persistenceBlocked) return false;
+      const ts = Date.now(), key = nameKey(name);
+      if (ts - (cooldown.get(key) ?? -Infinity) < COOLDOWN) return false;
+      const row = { name, ts, distance, sessionId: state.session.id, approximate: false, method };
+      commit({ ...state, log: [...state.log, row] });
+      cooldown.set(key, ts);
+      return true;
+    }
+
+    const enrollmentName = () => $('enroll-name').value.trim().replace(/\s+/g, ' ');
+    function manuallyEnroll() {
+      if (demo || enrollmentUnavailable()) return;
+      const name = enrollmentName();
+      if (!validName(name)) { problem('enroll-message', 'CB-PHO-01'); $('enroll-name').focus(); return; }
+      if (state.roster.some(row => nameKey(row.label) === nameKey(name))) {
+        problem('enroll-message', 'CB-PHO-02'); return;
+      }
+      const saved = commit({ ...state, roster: [...state.roster, { label: name, descriptors: [] }] });
+      $('enroll-form').reset();
+      renderData();
+      notice('enroll-message', saved ? `${name} was added for manual check-in.` :
+        `${name} was added temporarily. Export a backup to keep the change.`, saved ? 'good' : 'warn');
+    }
+    function enrollmentUnavailable() {
+      return enrolling || importing || (demo ? demo.step !== 'enroll' : persistenceBlocked);
+    }
+    async function enroll(event) {
+      event.preventDefault();
+      const isDemo = event.currentTarget === $('demo-enroll-form');
+      if (isDemo !== !!demo) return;
+      if (modelStatus !== 'ready' || enrollmentUnavailable()) return;
+      const form = event.currentTarget, message = isDemo ? 'demo-enroll-message' : 'enroll-message';
+      const name = isDemo ? 'Demo participant' : enrollmentName();
+      const file = $(isDemo ? 'demo-enroll-file' : 'enroll-file').files?.[0], began = performance.now();
+      const existing = isDemo ? null : state.roster.find(row => nameKey(row.label) === nameKey(name));
+      if (!validName(name)) { problem('enroll-message', 'CB-PHO-01'); $('enroll-name').focus(); return; }
+      if (existing?.descriptors.length) { problem('enroll-message', 'CB-PHO-02'); return; }
+      if (!file || !['image/jpeg', 'image/png', 'image/webp'].includes(file.type) || !file.size || file.size > MAX_PHOTO) {
+        problem(message, 'CB-PHO-03'); return;
+      }
+      enrolling = true; renderControls(); notice(message, 'Checking the photo…');
+      let href;
+      try {
+        href = URL.createObjectURL(file);
+        const img = new Image();
+        img.src = href;
+        await img.decode();
+        if (img.naturalWidth * img.naturalHeight > 24000000) throw coded('CB-PHO-04');
+        let photo = img;
+        const photoScale = 1440 / Math.max(img.naturalWidth, img.naturalHeight);
+        if (photoScale < 1) {
+          photo = document.createElement('canvas');
+          photo.width = Math.max(1, Math.round(img.naturalWidth * photoScale));
+          photo.height = Math.max(1, Math.round(img.naturalHeight * photoScale));
+          photo.getContext('2d').drawImage(img, 0, 0, photo.width, photo.height);
+        }
+        const api = window.faceapi;
+        if (activeDetection) await activeDetection.catch(() => {});
+        const faces = await api.detectAllFaces(photo, new api.TinyFaceDetectorOptions({ inputSize: 512 }))
+          .withFaceLandmarks().withFaceDescriptors();
+        if (faces.length !== 1) throw coded(faces.length ? 'CB-PHO-06' : 'CB-PHO-05');
+        const [entry] = validateRoster([{ label: existing?.label ?? name, descriptors: [Array.from(faces[0].descriptor)] }]);
+        form.reset();
+        if ($('camera-message').textContent.startsWith('Add a photo') || $('camera-message').textContent.startsWith('Upload a demo photo')) notice('camera-message');
+        if (isDemo) {
+          acceptDemoPhoto(entry, false, Math.round(performance.now() - began));
+          rebuildMatcher(); renderDemo();
+          notice('demo-message', `Photo enrollment passed. ${demoPrompt()}`, 'good');
+          ($('demo-action').disabled ? $('demo-heading') : $('demo-action')).focus();
+        } else {
+          // Replace a manual-only entry in place so its check-ins keep the same name identity.
+          const roster = existing ? state.roster.map(row => nameKey(row.label) === nameKey(existing.label) ? entry : row) :
+            [...state.roster, entry];
+          const saved = commit({ ...state, roster });
+          latestPhotoEntry = entry;
+          renderData();
+          const success = existing ? `${existing.label} now supports face check-in.` : `${name} was enrolled.`;
+          notice('enroll-message', saved ? success : `${success} Changes are temporary; export a backup.`, saved ? 'good' : 'warn');
+        }
+      } catch (error) {
+        problem(message, error.name === 'EncodingError' ? 'CB-PHO-04' : error.code || 'CB-PHO-07');
+      } finally {
+        if (href) URL.revokeObjectURL(href);
+        enrolling = false; renderControls();
+      }
+    }
+    async function removeMember(entry, index) {
+      if (demo || persistenceBlocked) return;
+      if (!await ask('Remove enrolled member?', `Remove ${entry.label} and their face template? Existing check-ins will be kept.`, 'Remove member')) return;
+      if (state.roster[index] !== entry) return;
+      const saved = commit({ ...state, roster: state.roster.filter((_, i) => i !== index) });
+      renderData();
+      $('clear-roster').disabled ? $('enroll-name').focus() : $('clear-roster').focus();
+      notice('roster-message', saved ? `${entry.label} was removed.` : `${entry.label} was removed for this visit only.`);
+    }
+    async function clearRoster() {
+      if (!state.roster.length || persistenceBlocked || demo ||
+          !await ask('Clear the roster?', 'This removes all enrolled names and face templates. Existing check-ins will be kept.', 'Clear roster')) return;
+      const saved = commit({ ...state, roster: [] });
+      renderData();
+      $('enroll-name').focus();
+      notice('roster-message', saved ? 'All roster entries were removed.' : 'The roster was cleared for this visit only.');
+    }
+    async function clearLog() {
+      if (!state.log.length || persistenceBlocked || demo ||
+          !await ask('Clear all attendance records?', 'This deletes check-ins from every session in this browser, not just the records currently shown. Your roster will be kept.', 'Clear all records')) return;
+      const saved = commit({ ...state, log: [] });
+      pendingReviews.clear(); ignoredReviews.clear();
+      renderData();
+      $('log-search').focus();
+      notice('log-message', saved ? 'All attendance records were removed.' : 'Records were cleared for this visit only.');
+    }
+    async function startSession() {
+      if (persistenceBlocked || importing || demo ||
+          !await ask('Start a new session?', 'The unique attendee count and check-in cooldown reset. Previous records stay available under All sessions.', 'Start new session')) return;
+      const saved = commit({ ...state, session: createSession() });
+      pendingReviews.clear(); ignoredReviews.clear();
+      notice('review-message');
+      feedbackHold = 0;
+      $('log-scope').value = 'session'; $('log-search').value = ''; recordLimit = 40;
+      renderData();
+      notice('log-message', saved ? 'A new session has started.' : 'A new temporary session has started. Export a backup before leaving.');
+    }
+
+    $('retry-models').addEventListener('click', loadModels);
+    $('open-help').addEventListener('click', openHelp);
+    $('copy-diagnostics').addEventListener('click', copyDiagnostics);
+    $('download-diagnostics').addEventListener('click', downloadDiagnostics);
+    $('manual-open').addEventListener('click', () => openManual());
+    $('manual-form').addEventListener('submit', submitManual);
+    $('manual-cancel').addEventListener('click', () => $('manual-dialog').close());
+    $('add-manual').addEventListener('click', manuallyEnroll);
+    $('roster-filter').addEventListener('change', renderRoster);
+    $('start-demo').addEventListener('click', enterDemo);
+    $('welcome-later').addEventListener('click', () => $('demo-welcome').close());
+    $('welcome-start').addEventListener('click', () => {
+      $('demo-welcome').close();
+      enterDemo();
+    });
+    $('demo-welcome').addEventListener('close', () => { if (!demo) $('start-demo').focus(); });
+    $('demo-welcome').addEventListener('keydown', event => {
+      const edge = $(event.shiftKey ? 'welcome-later' : 'welcome-start');
+      if (event.key !== 'Tab' || event.target !== edge) return;
+      event.preventDefault();
+      $(event.shiftKey ? 'welcome-start' : 'welcome-later').focus();
+    });
+    $('exit-demo').addEventListener('click', exitDemo);
+    $('demo-action').addEventListener('click', runDemoAction);
+    $('demo-roster-member').addEventListener('change', event => {
+      if (demo?.step !== 'enroll') return;
+      const selected = event.target.value;
+      demo.selectedRosterEntry = selected === '' ? null : demoRoster()[Number(selected)] ?? null;
+      renderControls();
+    });
+    $('demo-use-member').addEventListener('click', useDemoRosterMember);
+    $('demo-enroll-form').addEventListener('submit', enroll);
+    $('demo-export').addEventListener('click', exportDemo);
+    $('demo-restart').addEventListener('click', restartDemo);
+    $('export-backup').addEventListener('click', exportBackup);
+    $('import-backup').addEventListener('click', () => $('import-file').click());
+    $('import-file').addEventListener('change', importBackup);
+    $('new-session').addEventListener('click', startSession);
+    $('csv-export').addEventListener('click', exportCSV);
+    $('clear-log').addEventListener('click', clearLog);
+    $('clear-roster').addEventListener('click', clearRoster);
+    $('enroll-form').addEventListener('submit', enroll);
+    $('threshold-slider').addEventListener('input', e => setThreshold(Number(e.target.value)));
+    $('threshold-slider').addEventListener('change', savePreferences);
+    $('reset-threshold').addEventListener('click', () => setThreshold(DEFAULT_THRESHOLD, true));
+    $('refresh-devices').addEventListener('click', () => refreshDevices(true));
+    $('btn-toggle-cam').addEventListener('click', () => {
+      if (stream) stopCamera();
+      else {
+        const device = $('camera-select').value;
+        void startCamera(device, device ? '' : null);
+      }
+    });
+    $('camera-select').addEventListener('change', event => {
+      const device = event.target.value;
+      if (stream) void startCamera(device, stream.getVideoTracks()[0]?.getSettings?.().deviceId || preferredCamera);
+      else { preferredCamera = device; savePreferences(); }
+    });
+    $('log-search').addEventListener('input', () => { recordLimit = 40; renderLog(); });
+    $('log-scope').addEventListener('change', () => { recordLimit = 40; renderLog(); });
+    $('log-more').addEventListener('click', () => { recordLimit += 40; renderLog(); });
+    media()?.addEventListener?.('devicechange', () => refreshDevices());
+    window.addEventListener('pagehide', () => { if (stream || cameraBusy) stopCamera(); });
+    function clock() {
+      $('clock').textContent = dateFormat.format(new Date());
+      const before = pendingReviews.size;
+      pruneReviews();
+      if (pendingReviews.size !== before) renderReview();
+    }
+    loadLocal(); setThreshold(threshold); renderData();
+    maybeShowDemoWelcome();
+    clock(); setInterval(clock, 15000);
+    void refreshDevices();
+    void loadModels();
+  })();
+  </script>
+</body>
+</html>
